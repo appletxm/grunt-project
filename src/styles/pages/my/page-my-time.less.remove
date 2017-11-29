@@ -1,0 +1,69 @@
+.my-time{
+	dl{
+		position:relative;
+	}
+	dd{
+		text-align: right;
+		height: @menuHeight;
+
+		.animate-check{
+			right: 10px; 
+		}
+
+		em{
+			display: inline;
+		}
+	}
+
+	.need-arrow{
+		dd{
+			.after-arrow();
+			padding-right: 25px;
+		}
+	}
+
+	i{
+		font-size: @font16;
+		line-height: 24px;
+		color: @fontBlack;
+		padding: 30px 20px 10px 20px;
+	}
+
+	.time-cut-down{
+		font-size: @font16;
+		color: @fontOrange;
+		text-align:center;
+
+		margin: 20px 10px;
+
+		&:before{
+			display:inline-block;
+			.icon();
+			content: @fa-var-clock-o;
+			margin-right: 5px;
+		}
+
+		b{
+			display: inline;
+		}
+	}
+}
+
+.mask-time{
+	display:block;
+	list-style: none;
+	padding:10px;
+
+	li{
+		display:block;
+		line-height: @menuHeight - 10px;
+		border-bottom: 1px solid @borderGray;
+		text-align: center;
+
+		&:last-child{
+			border:0;
+		}
+	}
+}
+
+

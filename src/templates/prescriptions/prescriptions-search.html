@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>常用药</title>
+	<link href="../../styles/base.css" rel="stylesheet" media="all">
+	<link href="../../styles/page-prescriptions.css" rel="stylesheet" media="all">
+</head>
+<body>
+	<div class="medical-main medical-main-prescription">
+		<div class="need-freeze">
+			<div id="searchBinObj"></div>
+		</div>
+
+		<div class="tab-con my-search-list">
+			<div id="filterBarHorizental" class="filter-bar-outer">
+				<ul class="filter-bar" id="filterBar">
+					<li class="selected" type="default">默认</li>
+					<li type="saleNum">按销量</li>
+					<li type="salePrice">按价格</li>
+				</ul>
+			</div>
+
+			<div class="product-list medical-search-list" id="medicalSearchList">
+				<!--<dl><dt><a href="patient-medical-detail.html?medicalId=1107&amp;isAdded=false"><img src="http://img.jxdyf.com/product/0000/011/11632_L1.jpg" width="100"></a></dt><dd onclick="patientMedicalSearch.handleSearchListClick(event);"><i class="tit">【999】三九感冒灵胶囊 12粒（感冒灵胶囊）</i><i class="size">天津金耀</i><b>¥10.90</b><span class="add-store" data-id="1107">添加到常用药</span> <i class="added-tip">已有0人添加</i><span class="add-recommond" id="add-recommond-1107" hasaddtostore="0" productid="1107" usage="%E5%8F%A3%E6%9C%8D%EF%BC%8C%E4%B8%80%E6%AC%A12%E7%B2%92%EF%BC%8C%E4%B8%80%E6%97%A53%E6%AC%A1%E3%80%82" spec="6g%E8%A3%85" skuid="15511" productsize="%E5%8F%A3%E6%9C%8D%EF%BC%8C%E4%B8%80%E6%AC%A12%E7%B2%92%EF%BC%8C%E4%B8%80%E6%97%A53%E6%AC%A1%E3%80%82" productname="%E3%80%90999%E3%80%91%E4%B8%89%E4%B9%9D%E6%84%9F%E5%86%92%E7%81%B5%E8%83%B6%E5%9B%8A%2012%E7%B2%92" commonname="%E6%84%9F%E5%86%92%E7%81%B5%E8%83%B6%E5%9B%8A"></span></dd></dl>-->
+			</div>
+		</div>
+	</div>
+
+	<!--<footer>
+		<a class="save" id="doSave">保存</a>
+	</footer>-->
+
+	<script src="../../js/config.js"></script>
+	<script src="../../js/dist/components.min.js"></script>
+	<script src="../../js/dist/prescriptions-search.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+/* Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen
+   readers do not read off random characters that represent icons */
+
+.fa-spinner{
+   &:before {
+      content: @fa-var-spinner;
+   }
+}
+
+@fa-var-spinner: "\f110";
+@fa-var-check: "\f00c";
+@fa-var-clock-o: "\f017";
+@fa-var-check-circle: "\f058";
+/*@fa-var-check-square-o: "\f046";*/
+@fa-var-plus: "\f067";
+@fa-var-times: "\f00d";
+@fa-var-rotate-left: "\f0e2";
+@fa-var-edit: "\f044";
+@fa-var-close: "\f00d";
+@fa-var-angle-right: "\f105";
+@fa-var-angle-left: "\f104";
+@fa-var-angle-down: "\f107";
+@fa-var-angle-up: "\f106";
+@fa-var-user: "\f007";
+@fa-var-android: "\f17b";
+@fa-var-apple: "\f179";
+@fa-var-key: "\f084";
+// @fa-var-male: "\f183";
+@fa-var-female: "\f182";
+@fa-var-male: "\f222";
+@fa-var-venus: "\f221";
+@fa-var-trash: "\f014";
+@fa-var-list-ul: "\f0ca";
+@fa-var-feed: "\f09e";

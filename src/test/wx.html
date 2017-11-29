@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<title>audio</title>
+	<link href="../styles/global.css" rel="stylesheet" media="all">
+</head>
+<body>
+
+<p>about voice</p>
+
+<input type="button" value="start record"  id="doRecord" />
+<input type="button" value="play record"  id="doPlayRecord" />
+<input type="button" value="pause record"  id="pauseRecord" />
+<input type="button" value="stop record"  id="stopRecord" />
+<input type="button" value="define voice"  id="defineVoice" />
+
+<p>about images</p>
+<input type="button" value="choose image"  id="chooseImage" />
+
+<p>input file</p>
+<input type="file" value="choose image"  />
+
+<p>camera</p>
+<input type="file" id="take-picture" accept="image/*">
+
+<p>camera 2</p>
+<section>
+	<video id="video" width="640" height="480" autoplay></video>
+	<button id="snap">Snap Photo</button>
+	<canvas id="canvas" width="640" height="480"></canvas>
+</section>
+
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+
+<script src="../js/config.js"></script>
+<script src="../js/dist/Compatible.min.js"></script>
+<script src="../js/dist/Ajax.min.js"></script>
+<script src="../js/dist/MessageBox.min.js"></script>
+<script src="../js/dist/WeixinSDK.min.js"></script>
+
+<script>
+	var myCode = {
+		ajax: null,
+		messageBox: null,
+		wxSDK: null,
+
+		init: function(){
+			this.ajax = new Ajax();
+			this.messageBox = new MessageBox();
+			this.wxSDK = new WeixinSDK();
+
+			this.showLoading();
+
+			var url = window.location.href.split('#')[0];
+
+			alert(window.location.href);
+
+			this.wxSDK.init({
+				debug: true,
+				callBack: this.loadPage.bind(myCode),
+				app_id: SYS_VAR.app_id,
+				app_secret: SYS_VAR.app_secret,
+				url: encodeURIComponent(url),
+				jsApiList: [
+					'startRecord',
+					'stopRecord',
+					'onVoiceRecordEnd',
+					'playVoice',
+					'pauseVoice',
+					'stopVoice',
+					'onVoicePlayEnd',
+					'uploadVoice',
+					'downloadVoice',
+					'translateVoice',
+
+					'chooseImage',
+					'previewImage',
+					'uploadImage',
+					'downloadImage'
+				],
+				interfaceUrl: SYS_VAR.SERVER_ADDRESS + 'doc/share_qrcode_info',
+				ajax: this.ajax
+			});
+
+
+			//this.loadPage();
+
+			this.attachEvent();
+		},
+
+		loadPage: function(wxConfig){
+
+			alert(JSON.stringify(wxConfig, '\n', '  '));
+
+			if(wxConfig){
+				wx.config(wxConfig);
+
+				wx.ready(function(){
+					this.getVerificationInfo();
+				}.bind(this));
+
+				wx.error(function(){
+					this.getVerificationInfo();
+				}.bind(this));
+			}else{
+				this.getVerificationInfo();
+			}
+		},
+
+		getVerificationInfo: function() {
+			this.hideLoading();
+		},
+
+		showLoading: function(){
+			this.messageBox.show({
+				msg:'<span class="fa fa-spinner fa-pulse fa-2x fa-fw"></span>',
+				type:'loading',
+				autoClose: false
+			});
+		},
+
+		hideLoading: function(){
+			this.messageBox.hide();
+		},
+
+		handleStartRecord: function(){
+			wx.startRecord();
+			wx.onVoiceRecordEnd({
+				// 录音时间超过一分钟没有停止的时候会执行 complete 回调
+				complete: this.doRecord.bind(this)
+			});
+		},
+
+		handleEndRecord: function(){
+			wx.stopRecord({
+				success: this.doRecord.bind(this)
+			});
+		},
+
+		doRecord: function(res){
+			this.localId = res.localId;
+			alert(this.localId);
+		},
+
+		handlePlay: function(){
+			if(this.localId){
+				wx.playVoice({
+					localId: this.localId // 需要播放的音频的本地ID，由stopRecord接口获得
+				});
+			}
+		},
+
+		handlePause: function(){
+			if(this.localId){
+				wx.pauseVoice({
+					localId: this.localId // 需要暂停的音频的本地ID，由stopRecord接口获得
+				});
+			}
+		},
+
+		handleStop: function(){
+			if(this.localId){
+				wx.pauseVoice({
+					localId: this.localId // 需要暂停的音频的本地ID，由stopRecord接口获得
+				});
+			}
+		},
+
+		defineVoice: function(){
+			wx.translateVoice({
+				localId: this.localId, // 需要识别的音频的本地Id，由录音相关接口获得
+				isShowProgressTips: 1, // 默认为1，显示进度提示
+				success: function (res) {
+					alert(res.translateResult); // 语音识别的结果
+				}
+			});
+		},
+
+		chooseImage: function(){
+			alert(11111111);
+
+			wx.chooseImage({
+				count: 1, // 默认9
+				sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
+				sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
+				success: function (res) {
+					alert(JSON.stringify(res, '\n', ''));
+
+					var localIds = res.localIds; // 返回选定照片的本地ID列表，localId可以作为img标签的src属性显示图片
+					alert('path=' + localIds);
+
+					var img = document.createElement('img');
+					document.querySelectorAll('body')[0].appendChild(img);
+					img.onload = function(){
+						alert('.....image load');
+					};
+					img.src = localIds;
+				}
+			});
+		},
+
+		attachEvent: function(){
+			var butRecord = document.querySelector('#doRecord');
+			var butPlay = document.querySelector('#doPlayRecord');
+			var butPuse = document.querySelector('#pauseRecord');
+			var butStop = document.querySelector('#stopRecord');
+			var butDefine = document.querySelector('#defineVoice');
+			var butChooseImage = document.querySelector('#chooseImage');
+
+			butRecord.addEventListener('touchstart', function(){
+				this.handleStartRecord();
+			}.bind(this));
+
+			butRecord.addEventListener('touchend', function(){
+				this.handleEndRecord();
+			}.bind(this));
+
+			butPlay.addEventListener('click', function(){
+				this.handlePlay();
+			}.bind(this));
+
+			butPuse.addEventListener('click', function(){
+				this.handlePause();
+			}.bind(this));
+
+			butStop.addEventListener('click', function(){
+				this.handleStop();
+			}.bind(this));
+
+			butDefine.addEventListener('click', function(){
+				this.defineVoice();
+			}.bind(this));
+
+			butChooseImage.addEventListener('click', function(){
+				this.chooseImage();
+			}.bind(this));
+		}
+	};
+
+	myCode.init();
+</script>
+
+<script type="application/javascript">
+	/**
+	 @description 打开摄像头并抓图 仅限于chrome Opera 遨游 浏览器
+	 */
+		//及时函数
+	(function() {
+		'use strict';
+		var snap = document.getElementById("snap");
+		window.addEventListener("DOMContentLoaded", function() {
+			var canvas = document.getElementById("canvas"),
+				context = canvas.getContext("2d"),
+				video = document.querySelector("video");
+			navigator.getMedia = (navigator.getUserMedia ||
+			navigator.webkitGetUserMedia ||
+			navigator.mozGetUserMedia ||
+			navigator.msGetUserMedia);
+			navigator.getMedia(
+				// constraints
+				{
+					video: true,
+					audio: false //禁止音频
+				},
+				// successCallback
+
+				function(localMediaStream) {
+					video.src = window.URL.createObjectURL(localMediaStream);
+					video.onloadedmetadata = function(e) {
+						// Do something with the video here.
+					};
+				},
+				// errorCallback
+
+				function(err) {
+					console.log("The following error occured: " + err);
+				}
+			);
+			//添加点击按钮事件 来实现抓图
+			snap.addEventListener("click", function() {
+				context.drawImage(video, 0, 0, 640, 480);
+			});
+		}, false);
+	}());
+</script>
+	
+</body>
+</html>

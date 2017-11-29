@@ -1,0 +1,88 @@
+.my-rule{
+	padding: 10px;
+	background: @bgGray;
+
+	aside{
+		margin: 10px 0;
+		color: #777;
+	}
+
+	h2{
+		font-size: @font20;
+		font-weight:normal;
+		color: @fontBlueHigh;
+	}
+
+	h1{
+		font-weight: normal;
+		color: @fontGray;
+		font-size: @font14;
+	}
+
+	ol{
+		list-style-type:decimal;
+		margin: 10px 0;
+
+		li{
+			color: #777;
+			line-height: 24px;
+		}
+	}
+
+	p{
+		text-align: center;
+		margin: 0 0 10px 0;
+
+		img{
+			display:block;
+			width: 100%;
+		}
+	}
+
+	.q-and-a{
+		line-height:30px;
+		ol{
+			display:block;
+			margin:0 auto; 
+
+			li{
+				margin-bottom:15px;
+
+				section{
+					display: none;
+					font-size: @font16;
+					color: @fontLightBlack;
+				}
+
+				&.selected{
+					color: @fontBlueHigh;
+					section{
+						display: block;
+					}
+				}
+			}
+
+		}
+	}
+
+	.article{
+		text-indent: 20px;
+		text-align: left;
+		color: #777;
+		line-height: 24px;
+		margin: 10px 0;
+	}
+}
+
+.about-link{
+	a{
+		display:block;
+		border-bottom: 1px solid @borderGray;
+		height: 40px;
+		position:relative;
+		background: @bgWhite;
+		padding-left: 10px;
+		.after-arrow();
+		line-height: 40px;
+	}
+}

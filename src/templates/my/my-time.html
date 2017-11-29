@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<title>现在出诊</title>
+	<link href="../../styles/base.css" rel="stylesheet" media="all">
+	<link href="../../styles/page-my.css" rel="stylesheet" media="all">
+</head>
+<body>
+
+	<div id="myTimepanel" class="basic-info my-time">
+		<dl>
+			<dt>我要出诊</dt>
+			<dd>
+				<span id="timeSwitch" class="animate-check close">
+					<b></b>
+					<input type="checkbox" value="1" />
+				</span>
+			</dd>
+		</dl>
+
+		<div id="timeChoose" class="mask-outer" style="display:none;">
+			<dl class="need-arrow">
+				<dt>出诊时长</dt>
+				<dd>
+					<em id="showTimeText">00</em>分钟
+				</dd>
+			</dl>
+
+			<!-- <div class="mask-time" style="display: block;">
+				<select>
+					<option value="10" selected="selected">10</option>
+					<option value="15">15</option>
+					<option value="20">20</option>
+					<option value="25">25</option>
+					<option value="30">30</option>
+					<option value="35">35</option>
+					<option value="40">40</option>
+					<option value="45">45</option>
+					<option value="50">50</option>
+					<option value="55">55</option>
+					<option value="60">60</option>
+				</select>
+			</div> -->
+
+		</div>
+
+		<i>
+			为方便您对空闲时间的利用，我们提供给您自由出诊模式，您可以随时挂起出诊并设置您这次出诊的时间，您出诊后，在患者端显示您在线状态，方便患者跟您的聊天！
+		</i>
+
+		<footer class="no-need-fixed">
+			<a class="save" id="saveTime">确认</a>
+		</footer>
+
+		<div id="timeCutDown" class="time-cut-down" style="display:none;">提示：您本次出诊到<b>00:00:00</b>结束！</div>
+	</div>
+
+
+
+	<script src="../../js/config.js"></script>
+	<script src="../../js/dist/components.min.js"></script>
+	<script src="../../js/dist/my-time.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+.prescriptions-list-box{
+    padding-top: 20px;
+    nav{
+        margin-bottom: 70px;
+
+        ul{
+            li{
+                position: relative;
+
+                a{
+                    padding-right: 50px;
+                }
+
+                i{
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    z-index: 10px;
+                    display: none;
+                    width: 50px;
+                    height: 50px;
+                    background: url(images/delete.png) no-repeat center center;
+                    background-size: 50%;
+                }
+            }
+        }
+
+        li:last-child a{
+            border: 0;
+        }
+    }
+}
+
+.medical-main-prescription{
+    .my-search-list{
+        padding-top: 0;
+    }
+    .filter-bar{
+        margin: 0 8px;
+    }
+    .medical-search-list{
+        margin-top: 10px;
+        dl{
+            dt{
+                left: 10px;
+            }
+            padding: 10px;
+            dd{
+                padding-right: 38px;
+                .add-recommond{
+                    right: 0;
+                }
+            }
+        }
+
+        .no-data-tip{
+            position: static;
+            background: @bgGray;
+            &:after{
+                content: "没有搜索到相关药品"
+            }
+            z-index: 20;
+        }
+    }
+}

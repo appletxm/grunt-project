@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<title>病历档案</title>
+	<link href="../../styles/base.css" rel="stylesheet" media="all">
+	<link href="../../styles/page-patient-info.css" rel="stylesheet" media="all">
+</head>
+<body>
+	<div id="list-content" class="patient-case-files"></diV>
+
+	<footer>
+		<a href="../chat/chat.html" id="send-messages">发送消息</a>
+	</footer>
+
+	<script id="list-content-tpl" type="text/html">
+		<ul class="cm-list">
+			<% for(var i = 0, len = list.length; i < len; i++) { %>
+			<li class="item">
+				<h3 class="tit"><%= list[i].descriptionStr %></h3>
+				<p class="time"><%= list[i].timeStr %></p>
+				<ul class="img-wrap">
+					<%
+						for(var j = 0, imgLen = list[i].imgs.length; j < imgLen; j++) {
+							if (list[i].imgs[j].imgUrl && list[i].imgs[j].imgUrl !== '' && list[i].imgs[j].imgUrl !== 'null' && list[i].imgs[j].imgUrl !== 'undefined') {
+					%>
+					<li><img src="<%= list[i].imgs[j].imgUrl %>?s=t" onclick="patientCaseFiles.mediaFullScreenView('<%= list[i].imgs[j].imgUrl %>', 1, event);" width="80" height="80"></li>
+					<%
+							}
+						}
+					%>
+				</ul>
+				<p class="more"><a href="<%= list[i].detailUrl %>">查看详情</a></p>
+			</li>
+			<% } %>
+		</ul>
+	</script>
+
+	<script src="../../js/config.js"></script>
+	<script src="../../js/dist/components.min.js"></script>
+
+	<script src="../../js/dist/patient-info-case-files.min.js"></script>
+</body>
+</html>

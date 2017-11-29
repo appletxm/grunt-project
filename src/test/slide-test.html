@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>touch event test</title>
+	<style>
+		.touch-panel{
+			width: 300px;
+			height: 400px;
+			background: #bbb;
+		}
+	</style>
+</head>
+<body>
+	
+	<div id="touchPanel" class="touch-panel">
+
+	</div>
+
+	<script>
+		var pageInfo = {
+			start: {},
+			end: {}
+		};
+		var panel = document.querySelector('#touchPanel');
+		panel.addEventListener('touchstart', function(event){
+			//alert('===:'+event.pageX + '\n' + event.touches[0].pageX);
+			pageInfo.start.pageX = event.pageX || event.touches[0].pageX;
+			event.preventDefault();
+			event.stopPropagation();
+		});
+
+		panel.addEventListener('touchmove', function(event){
+			//alert('---:'+ event.pageX + ':' + event.touches[0].pageX + ' == ' + pageInfo.pageX);
+			pageInfo.end.pageX = event.pageX || event.touches[0].pageX;
+			event.preventDefault();
+			event.stopPropagation();
+		});
+
+		panel.addEventListener('touchend', function(event){
+			event.preventDefault();
+			event.stopPropagation();
+			alert(pageInfo.start.pageX + ':' + pageInfo.end.pageX);
+		});
+	</script>
+</body>
+</html>

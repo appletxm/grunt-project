@@ -1,0 +1,263 @@
+// 测试数据
+var mock_prescription = {
+    data: [
+        {
+            id: 3,
+            doctorId: 1,
+            name: "分组",
+            medicationIds: "16495,10049,7044",
+            createdAt: "2015-06-23 23:24:48",
+            changedAt: null
+        }
+    ],
+    msg: "success",
+    code: 0
+};
+
+var mock_p_detail = {
+    data: [
+        {
+            id: 1107,
+            name: "【999】三九感冒灵胶囊 12粒",
+            commonName: "感冒灵胶囊",
+            spec: "6g装",
+            usage: "口服，一次2粒，一日3次。",
+            image: "http://img.7lk.com_1.jpg",
+            salePrice: "10.90",
+            marketPrice: "13.08",
+            addNum: 0,
+            added: false,
+            skus: [
+                {
+                    skuId: 15511,
+                    name: "999感冒灵胶囊",
+                    salePrice: "10.90",
+                    prescribed: false
+                }
+            ],
+            prescribed: false
+        },
+        {
+            id: 1108,
+            name: "111【999】三九感冒灵胶囊 12粒",
+            commonName: "感冒灵胶囊",
+            spec: "6g装",
+            usage: "口服，一次2粒，一日3次。",
+            image: "http://img.7lk.com_1.jpg",
+            salePrice: "10.90",
+            marketPrice: "13.08",
+            addNum: 0,
+            added: false,
+            skus: [
+                {
+                    skuId: 15511,
+                    name: "999感冒灵胶囊",
+                    salePrice: "10.90",
+                    prescribed: false
+                }
+            ],
+            prescribed: false
+        }
+    ],
+    msg: "success",
+    code: 0
+}
+
+
+var prescription = {
+    ajax: null,
+    popWindow: null,
+    messageBox: null,
+    requestUrl: SYS_VAR.SERVER_ADDRESS,
+
+    selectedList: null,
+    completedTimes: 0,
+
+    init: function(params){
+        if(params){
+            this.mainPageObj = params.pageObj;
+
+            this.ajax = params.pageObj['ajax'];
+            this.messageBox = params.pageObj['messageBox'];
+            this.popWindow = params.pageObj['popWindow'];
+        }
+
+        this.attachEvent();
+    },
+
+    getPrescription: function(){
+        var param = {
+            sendParameters:{}
+        };
+
+        param.url = this.requestUrl + 'doc/medication_group_list/';
+        param.type = 'GET';
+        param.asyn = true;
+        param.onSuccess = this.handleGetPrescriptionSuccess.bind(this);
+        param.onError = this.mainPageObj.handleGetError.bind(this);
+        //param.mssage = this.messageBox;
+
+        this.ajax.send(param);
+
+        this.mainPageObj.showLoading();
+
+        //this.handleGetPrescriptionSuccess(mock_prescription);
+    },
+
+    handleGetPrescriptionSuccess: function(responseText){
+        if(responseText.code === 0 || responseText.code === '0'){
+            this.showPrescriptionList(responseText.data);
+            this.mainPageObj.hideLoading();
+        }else{
+            this.mainPageObj.handleGetError(responseText);
+        }
+    },
+
+    showPrescriptionList: function(data){
+        var panel = document.querySelector('#myPrescriptionList');
+        panel.innerHTML = this.getPrescriptionHtml(data);
+    },
+
+    getPrescriptionHtml: function(list){
+        var content = [];
+
+        for(var i=0; i < list.length; i++){
+            var medicine;
+            var medicationIds;
+
+            medicationIds = list[i]['medicationIds'];
+
+            if(!medicationIds || medicationIds === '' || medicationIds === 'undefined' || medicationIds === 'null'){
+                medicine = [];
+            }else{
+                medicine = medicationIds.split(',');
+            }
+
+            content.push('<h2 id="' + list[i]['id'] + '" medicationIds="' + list[i]['medicationIds'] + '" class="after-arrow">' + list[i].name + '<b>(' + medicine.length + ')</b></h2>');
+            content.push('<div id="myPrescription_' + list[i]['id'] + '" class="product-list"></div>');
+        }
+
+        return content.join('');
+    },
+
+    openOrClosePrescriptDetail: function(target, panel){
+        var display;
+
+        if(!panel.innerHTML || panel.innerHTML === ''){
+            this.loadMedicineForPrescription(parseInt(target.getAttribute('id'), 10), panel);
+            target.className = target.className + ' selected';
+        }else{
+            display = panel.style.display;
+
+            if(display === 'none'){
+                panel.style.display = 'block';
+                target.className = target.className + ' selected';
+            }else{
+                panel.style.display = 'none';
+                target.className = target.className.replace(' selected', '');
+            }
+        }
+    },
+
+    loadMedicineForPrescription: function(id, panel){
+        var param = {
+            sendParameters:{
+                id: id
+            }
+        };
+
+        param.url = this.requestUrl + 'doc/medication_group_detail';
+        param.type = 'GET';
+        param.asyn = true;
+        param.onSuccess = function(responseText){
+            this.handleGetPrescriptionDetailSuccess(responseText, panel);
+        }.bind(this);
+
+        param.onError = this.mainPageObj.handleGetError.bind(this);
+        //param.mssage = this.messageBox;
+
+        this.ajax.send(param);
+
+        this.mainPageObj.showLoading();
+
+        //this.handleGetPrescriptionDetailSuccess(mock_p_detail, panel);
+    },
+
+    handleGetPrescriptionDetailSuccess: function(responseText, panel){
+        if(responseText.code === 0 || responseText.code === '0'){
+            this.showPrescriptionDetail(responseText.data, panel);
+            this.mainPageObj.hideLoading();
+        }else{
+            this.mainPageObj.handleGetError(responseText);
+        }
+    },
+
+    showPrescriptionDetail: function(list, panel){
+        var html;
+        html = this.mainPageObj.getListHtml(list, 3);
+        /*if(html && html !== ''){
+            html += '<p class="tip-msg-fixed">如果您想要将此处方单推荐给患者，您需要对此处方单内的药物一一填写用法用量</p>';
+            html += '<a class="do-save-recommond send-prescription">将此处方单推荐给患者</a>';
+        }*/
+        panel.innerHTML = html;
+        panel.style.display = 'block';
+    },
+
+    sendPrescription: function(target){
+        this.selectedList = target.parentNode.querySelectorAll('span');
+
+        if(this.selectedList.length > 0){
+            recommend.recommendList = [];
+            this.showRecommendBox();
+        }
+    },
+
+    showRecommendBox: function(){
+        recommend.showRecommendBox(this.selectedList[this.completedTimes],  {
+            callBack: this.confirmSendPrescription.bind(this)
+        });
+    },
+
+    confirmSendPrescription: function(){
+        if(this.completedTimes === this.selectedList.length - 1){
+            recommend.doRecommend();
+            recommend.isFromPrescription = null;
+            this.completedTimes = 0;
+        }else{
+            this.completedTimes++;
+            this.showRecommendBox();
+        }
+    },
+
+    handlePanelClick: function(event){
+        var target = event.target;
+        var label = target.tagName.toLowerCase();
+        var number;
+
+        if(label === 'h2'){
+
+            number = (/\d+/).exec(target.querySelectorAll('b')[0].innerHTML);
+            number = number ? parseInt(number, 10) : 0;
+
+            if(number > 0){
+                this.openOrClosePrescriptDetail(target, target.nextElementSibling);
+
+                event.preventDefault();
+                event.stopPropagation();
+            }
+
+        }/*else if(label === 'a' && target.className.indexOf('send-prescription') >= 0){
+            this.sendPrescription(target);
+        }*/
+    },
+
+    attachEvent: function(){
+        var prescriptionPanel = document.querySelector('#myPrescriptionList');
+
+        prescriptionPanel.onclick = function(event){
+            this.handlePanelClick(event);
+        }.bind(this);
+    }
+};
+
+//prescription.init();

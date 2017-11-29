@@ -1,0 +1,106 @@
+.patient-case-files-details{
+    padding-top: 10px;
+    padding-bottom: 55px;
+
+    h6{
+        padding: 0 10px;
+        line-height: 36px;
+        color: @fontLightBlack;
+        font-size: @font16;
+        font-weight: normal;
+    }
+
+    i{
+        color: @fontLightGray;
+    }
+
+    .case-details{
+        padding: 10px;
+        margin-bottom: 20px;
+        background: @bgWhite;
+        line-height: 24px;
+    }
+
+    .images-box{
+        padding: 0 10px;
+        margin-bottom: 20px;
+        background: @bgWhite;
+
+        dl{
+            background: url("images/base/boder-gray.gif") repeat-x left bottom;
+            display: block;
+            height: auto;
+
+            &:last-child{
+                background: none;
+            }
+            dt{
+                color: @fontLightBlack;
+                padding: 10px 0;
+                display: block;
+            }
+
+            dd{
+                display:block;
+                overflow: hidden;
+                line-height: 24px;
+
+                span{
+                    float: left;
+                    width: 22%;
+                    margin-right: 3.8%;
+                    margin-bottom: 10px;
+                    box-shadow: 0 0 0.5px @fontLightBlack;
+                    background: transparent url(images/loading.gif) no-repeat center center;
+                    background-size: 30% auto;
+
+                    &:nth-child(4n){
+                        margin-right:0;
+                    }
+
+                    img{
+                        width: 100%;
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+
+    .table-wrap{
+        padding: 0 10px;
+        background: @bgWhite;
+        .msg-table{
+            border-collapse: collapse;
+            width: 100%;
+
+            td{
+                vertical-align: middle;
+                padding: 10px 0;
+                background: url("images/base/boder-gray.gif") repeat-x left bottom;
+                font-size: @font16;
+            }
+            tr:last-child td{
+                background: none;
+            }
+            .title{
+                color: @fontLightBlack;
+                white-space: nowrap;
+                word-break: keep-all;
+                word-wrap: normal;
+                line-height: @menuHeight;
+                color: @fontLightBlack;
+            }
+            .value{
+                line-height: 24px;
+                padding-left: 15px;
+                text-align: right;
+                color: @fontBlack;
+            }
+        }
+    }
+
+    .no-data-tip:after{
+        content: "该病人没有建立相关档案";
+    }
+}

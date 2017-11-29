@@ -1,0 +1,115 @@
+.medical-main {
+	padding-bottom:0;
+
+	.need-freeze {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		background: @bgGray;
+		z-index: 5;
+
+		.tab{
+			margin-left: 50px;
+			border-top: 1px solid @borderGray;
+		}
+
+		.float-filter-bar-outer{
+			position: fixed;
+			top: 62px;
+			left: 0;
+			z-index: 6;
+		}
+
+		&.no-need-filter{
+			.tab{
+				margin-left:0;
+			}
+			.float-filter-bar-outer{
+				display: none;
+			}
+		}
+	}
+
+	.form-list {
+		a {
+			height: @menuItemHeight;
+			line-height: @menuItemHeight;
+			.after-arrow();
+		}
+	}
+
+	.mixin-list(100px, 100px, 30px, 30px);
+
+	.cm-list{
+		.add-recommond{
+			position: absolute;
+			background-color: @bgBlue;
+			color: #fff;
+			font-size: 12px;
+			text-align: center;
+			top: 50%;
+			right: 0;
+			width: 30px;
+			height: 30px;
+			line-height: 30px;
+			margin-top: -15px;
+
+			&.selected{
+				background-color: transparent;
+				background-image: url(images/delete.png);
+			}
+		}
+	}
+
+	.cm-list-t-img-ctrl{
+		position:relative;
+
+		a{
+			display:block;
+			position: absolute;
+			top:0;
+			left:0;
+		}
+	}
+}
+
+.scroll-list-outer{
+	position: absolute;
+	top: 124px;
+	bottom: 40px;
+	left:0;
+	right:0;
+	padding-top:0;
+	overflow: scroll;
+	-webkit-overflow-scrolling: touch;
+}
+
+.medical-main-prescription{
+	padding-bottom: 10px;
+
+	.my-search-list{
+		padding-top: 42px;
+
+		.medical-search-list{
+			margin-top: 46px;
+			margin-bottom: 0;
+		}
+
+		.filter-bar-outer{
+			display: block!important;
+			top: 42px;
+			.filter-bar{
+				margin: 8px;
+			}
+		}
+
+		.float-filter-bar-outer{
+			display: none;
+		}
+	}
+
+	.tab{
+		display:none;
+	}
+}

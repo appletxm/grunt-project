@@ -1,0 +1,257 @@
+.form-list{
+	a{
+		.menu-line();
+		
+		background: @bgWhite;
+
+		span{
+			position:absolute;
+			top:0;
+			right: @rightGap;
+			left: @formLeftGap;
+			height: 100%;
+			//line-height: @menuItemHeight;
+			vertical-align: middle;
+
+			text-overflow: ellipsis;
+			overflow: hidden;
+			text-align:right;
+
+		}
+
+		&:active{
+			background:@borderGray;
+		}
+
+		&.gapTop{
+			margin-top: @topGap;
+		}
+
+		&.selected{
+			background: @bgLightGray;
+			&:after{
+				content: @fa-var-angle-left;
+			}
+		}
+
+		&.no-arrow{
+			&:after{
+				content:'';
+			}
+		}
+	}
+
+	.check-list{
+		padding-left: @msgGap*3;
+
+		&:before{
+			content: "";
+			width: 20px;
+			height: 20px;
+			border:1px solid @borderGray;
+			background: @bgWhite;
+			position:absolute;
+			top:50%;
+			left: @msgGap + 5;
+			-webkit-border-radius: 11px;
+			margin: -11px -11px;
+			text-align: center;
+		}
+
+		&.checked{
+			&:before{
+				.icon();
+				background: @bgBlue;
+				content: @fa-var-check;
+				color: @fontWhite;
+				line-height: 20px;
+			}
+		}
+	}
+}
+
+.form-input{
+	padding-bottom: @footerButtonHeight + 10px;
+	box-sizing: border-box;
+
+	.form-input-row{
+		display:block;
+		border-bottom: 1px solid @borderGray;
+		background: @bgWhite;
+		height: @menuItemHeight;
+		position: relative;
+		font-size: @font16;
+		box-sizing: border-box;
+
+		input{
+			width:100%;
+			height:100%;
+			padding-left: @leftGap;
+			font-size: @font16;
+			border: 0;
+			background: @bgWhite;
+		}
+
+		&.form-radio-row{
+			position:relative;
+			text-align:right;
+			border-bottom: 1px solid @borderGray;
+			text-align:right;
+
+			label{
+				position:absolute;
+				top:0;
+				left:@leftGap;
+				right:0;
+				bottom:0;
+				line-height:@menuItemHeight;
+				text-align:left;
+				font-size: @font16;
+			}
+			input{
+				width: auto;
+				height: auto;
+				margin: (@menuItemHeight - 20)/2 @leftGap 0 0;
+			}
+		}
+
+		.get-valid-code{
+			.radius();
+
+			position:absolute;
+			top:8px;
+			right:5px;
+			display: block;
+			padding: 5px 10px;
+			background: @bgOrange;
+			color: @fontWhite;
+		}
+	}
+
+	.form-input-textarea{
+		padding:10px;
+		height: auto;
+		border-bottom:1px solid @borderGray;
+
+		textarea{
+			display:block;
+			width: 100%;
+			height: 200px;
+			font-size: @font16;
+			border:0; 
+		}
+	}
+}
+
+.form-search{
+	box-sizing: border-box;
+	display: block;
+	padding: @searchGap;
+	position: relative;
+	font-size: @font16;
+	background: @bgGray;
+	z-index: 7;
+
+	input{
+		display: none;
+		font-size: @font16;
+		height: 100%;
+		width: 100%;
+		border:0;
+	}
+
+	i{
+		display: inline-block;
+		padding-left: 20px;
+		line-height: @searchHeight;
+		background: url(images/search.png) no-repeat center left;
+		background-size: 16px 16px;
+		color: @fontLightGray;
+	}
+
+	span{
+		display: block;
+		height: @searchHeight;
+		border: 1px solid @borderGray;
+		text-align: center;
+		overflow: hidden;
+		background: @bgWhite;
+		-webkit-border-radius: (@searchHeight/2+1);
+		.radius();
+
+		&.selected{
+			text-align: left;
+			padding: 0 0 0 25px;
+			position: relative;
+
+			i{
+				width: 0px;
+				height:  @searchHeight;
+				overflow: hidden;
+				position: absolute;
+				top:0;
+				left: 5px;
+			}
+
+			input{
+				display: block;
+			}
+		}
+	}
+
+	.search-tip-list-outer{
+		position: fixed;
+		top: @searchHeight + 12px;
+		left: 12px;
+		right: 12px;
+		bottom: @recommondTip + 10px;
+		overflow: auto;
+
+		&.actived{
+			min-height: 50px;
+			bottom: auto;
+			display: block!important;
+			text-align: center;
+
+			span{
+				text-align: center;
+				font-size: @font16;
+				line-height: 30px;
+				display: inline;
+				border:0;
+			}
+		}
+	}
+
+	.search-tip-list{
+		background: @bgWhite;
+		.shadow();
+
+		a{
+			padding: 5px;
+			overflow:hidden;
+			text-overflow: ellipsis;
+			font-size: @font14;
+			color: @fontLightBlack;
+		}
+
+		&.form-list{
+			a{
+				height: auto;
+				line-height: 30px;
+			}
+		}
+	}
+}
+
+.form-freezen-padding{
+	padding-top: 90px;
+}
+
+.form-search-freezen{
+	position: fixed;
+	top:0;
+	left:0;
+	width:100%;
+	background : @bgGray;
+}

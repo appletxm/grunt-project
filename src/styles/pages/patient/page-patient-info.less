@@ -1,0 +1,168 @@
+.patient-info{
+	padding-bottom:0;
+
+	header{
+		position: static;
+		height: auto;
+
+		@media screen and (max-width:640px){
+			background: url(images/patient_info_bg@2x.png) no-repeat center top;
+		}
+
+		@media screen and (min-width: 641px){
+			background: url(images/patient_info_bg@3x.png) no-repeat center top;
+		}
+		p{
+			position: relative;
+			text-align: center;
+			span{
+				position: static;
+				width: 70px;
+				height: 70px;
+				display: inline-block;
+				border: 2px solid #fff;
+				.radius50();
+				overflow: hidden;
+				text-align: center;
+				img{
+					height: 100%;
+					width: auto;
+					vertical-align: top;
+				}
+			}
+			i{
+				position: absolute;
+				left: 50%;
+				top: 55px;
+				width: 20px;
+				height: 20px;
+				margin-left: 17px;
+				background: @bgBlue;
+				.radius50();
+				font-size: 12px;
+				line-height: 20px;
+
+				&:before{
+					.icon();
+					content: @fa-var-male;
+					color: @fontWhite;
+				}
+
+				&.female{
+					&:before{
+						content: @fa-var-venus;
+						color: @fontWhite;
+					}
+				}
+			}
+		}
+
+		ul{
+			list-style: none;
+			text-align: center;
+			color: @fontWhite;
+
+			li{
+				&.tit{
+					font-size: @font20;
+				}
+			}
+		}
+	}
+
+	h6{
+		padding: 10px 10px 5px;
+		color: @fontLightBlack;
+		font-size: @font14;
+	}
+
+	section {
+		dl{
+			&:last-child{
+				border:0;
+			}
+			dd{
+				padding-top: 12px;
+				padding-bottom: 10px;
+				line-height: 28px;
+			}
+		}
+		&:last-child {
+			margin-bottom: 20px;
+		}
+	}
+
+	.group-list{
+		a{
+			padding:0 10px;
+
+			&:after{
+				width: 20px;
+			}
+		}
+	}
+
+	.info-mark{
+		position:absolute;
+		top:0;
+		left:0;
+		width:100%;
+		bottom: @footerButtonHeight;
+		overflow:hidden;
+
+		ul{
+			display: block;
+			list-style: none;
+			position: absolute;
+			top:0;
+			overflow:auto;
+			height: 100%;
+		}
+
+		ul.time-line{
+			left:0;
+			width: 120px;
+			border-right: 1px solid @borderGray;
+
+			li{
+				line-height:40px;
+				text-align:center;
+				position: relative;
+
+				&:before{
+					position:absolute;
+					top:0;
+					right:0;
+					width:2px;
+					content: "";
+					height: 0;
+					-webkit-transition: height 0.3s ease;
+				}
+
+				&.selected{
+					background: @bgWhite;
+
+					&:before{
+						background: @bgBlue;
+						height:100%;
+					}
+				}
+			}
+		}
+
+		ul.det-info{
+			right:0;
+			left: 121px;
+
+			background: @bgWhite;
+			li{
+				padding: 10px;
+				i{
+					font-size: @font16;
+					color: @fontLightBlack;
+					margin-bottom: 15px;
+				}
+			}
+		}
+	}
+}

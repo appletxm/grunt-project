@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<title>患者信息</title>
+	<link href="../../styles/base.css" rel="stylesheet" media="all">
+	<link href="../../styles/page-patient-info.css" rel="stylesheet" media="all">
+</head>
+<body>
+	<section  id="patientBaseInfo" class="patient-base-info">
+		<!--<a href="javascript:void(0);">
+			<div class="patient-photo"><img id="headUrl" src="../../styles/images/dor_header.png" width="100" /></div>
+			<p>
+				<span id="name">患者名</span>
+				<samll id="city">广东·广州</samll>
+			</p>
+		</a>-->
+	</section>
+
+	<section>
+		<ul>
+			<li>
+				<a id="noto-name">
+					<span>姓名备注</span>
+					<em id="name-note"></em>
+				</a>
+			</li>
+		</ul>
+	</section>
+
+	<section>
+		<ul>
+			<li class="no-after-arrow">
+				<span>消息置顶</span>
+				<em id="setTopMsg" data-name="messages-top" class="animate-check close">
+                    <b data-name="messages-top"></b>
+                    <input type="checkbox" value="0">
+                </em>
+			</li>
+			<li class="no-after-arrow">
+				<span>消息勿扰</span>
+				<em id="setNoDisturb" data-name="messages-disturb" class="animate-check close">
+                    <b data-name="messages-disturb"></b>
+                    <input type="checkbox" value="0">
+                </em>
+			</li>
+		</ul>
+	</section>
+
+	<section class="lc">
+		<ul>
+			<li>
+				<a id="patient-case-files">
+					<span>病历档案</span>
+				</a>
+			</li>
+			<li>
+				<a id="patient-chat-images">
+					<span>聊天图片</span>
+				</a>
+			</li>
+			<li>
+				<a id="patient-illness-note">
+					<span>病情备注</span>
+				</a>
+			</li>
+		</ul>
+	</section>
+
+	<footer></footer>
+
+	<script src="../../js/config.js"></script>
+	<script src="../../js/dist/components.min.js"></script>
+	<script src="../../js/dist/patient-info-summary-info.min.js"></script>
+
+</body>
+</html>

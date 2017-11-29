@@ -1,0 +1,163 @@
+.my-card{
+	padding-bottom: @footerButHeight + 10px;
+
+	.delete{
+		color: @fontLightBlack;
+		padding: 5px 20px;
+		&:before{
+			display: none;
+		}
+	}
+
+	ul{
+		display:block;
+		list-style:none;
+
+		li{
+			display:block;
+			line-height: @menuHeight;
+			height: @menuHeight;
+			background: @bgWhite url("images/base/boder-gray.gif") repeat-x left bottom;
+			position:relative;
+			padding-left: 10px;
+			padding-bottom: 1px;
+
+			&:after{
+				position: absolute;
+				top: 50%;
+				width: 20px;
+				height: 20px;
+				line-height: 20px;
+				right: 10px;
+				margin: -11px 0;
+				content:" ";
+				border-radius: 11px;
+				-webkit-border-radius: 16px;
+				border: 1px solid @borderGray;
+				font-size: @font14;
+			}
+
+			&.row-check{
+				&:after{
+					content: @fa-var-check;
+					background-color: @bgBlue;
+					color: @fontWhite;
+				}
+			}
+
+			i{
+				display:inline;
+				color:@fontLightBlack;
+			}
+
+			&.no-data-tip{
+				background-color: transparent;
+				border:0;
+				height: auto;
+				padding:0;
+			}
+		}
+
+		&.cant-deal{
+			li:after{
+				display: none;
+			}
+		}
+	}
+
+
+	dl{
+
+		.basic-row();
+		position:relative;
+
+		dt{
+			position: absolute;
+			top: 0;
+			left:10px;
+			height: @menuHeight;
+			line-height: @menuHeight;
+			width: 70px;
+		}
+
+		dd{
+			box-sizing: border-box;
+			margin-left: 80px;
+			display: block;
+			height: @menuHeight;
+			line-height: @menuHeight;
+
+			&.need-skip{
+				color:@fontBlack;
+				position:relative;
+				padding-right:20px;
+				text-align:right;
+
+				.after-arrow();
+				&:after{
+					text-align:right;
+				}
+			}
+
+			input{
+				width:100%;
+				line-height:100%;
+				height:@menuHeight;
+				border:0;
+				font-size: @font16;
+				text-align:right;
+				outline: none;
+			}
+		}
+	}
+
+	.card-list{
+		padding-bottom: 0;
+
+		dl{
+			position:relative;
+			height: @menuItemWidth;
+			line-height: @menuItemWidth;
+
+			dd{
+				padding: 10px 0;
+				height: auto;
+				line-height: 30px;
+				margin-left: 60px;
+				text-align: left;
+			}
+		
+			dt{
+				width: 60px;
+				height: @menuItemWidth;
+				position:absolute;
+				top:0;
+				left:0;
+				text-align: center;
+
+				img{
+					margin-top: 5px;
+				}
+			}
+
+		}
+
+		.row-check{
+
+		}
+	}
+
+	a{
+		color: @fontBlack;
+	}
+
+	.but-only-border{
+		margin: 10px;
+		border:0; 
+	}
+
+	.form-input-row{
+		height: 66px;
+		font-size: @font16;
+	}
+}

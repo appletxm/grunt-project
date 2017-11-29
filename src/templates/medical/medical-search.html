@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>推荐用药</title>
+    <link href="../../styles/base.css" rel="stylesheet" media="all">
+    <link href="../../styles/page-medical.css" rel="stylesheet" media="all">
+</head>
+<body>
+    <div class="medical-main">
+        <div id="freezePanel" class="need-freeze">
+            <div id="searchBinObj"></div>
+
+            <div id="filterBarVertical" class="float-filter-bar-outer">
+                <div class="filter-mask"></div>
+                <span class="float-filter-bar">
+                    <ul id="filterBarVerticalInner">
+                        <li class="selected" type="default">默认</li>
+                        <li type="saleNum">按销量</li>
+                        <li type="salePrice">按价格</li>
+                    </ul>
+                </span>
+            </div>
+
+            <ul id="tabControl" class="tab tab-x2">
+                <li for="my-search-list" class="selected" id="mySearchResult"><span>搜索结果</span></li>
+                <li for="my-prescription" id="myPrescription"><span>常用药</span></li>
+            </ul>
+        </div>
+
+        <div class="tab-con my-search-list scroll-list-outer" id="searchListScroll">
+            <ul id="medicalSearchList" class="cm-list cm-list-t-img-ctrl"></ul>
+
+            <div id="filterBarHorizental" class="filter-bar-outer" style="display: none;">
+                <ul class="filter-bar" id="filterBar">
+                    <li class="selected" type="default">默认</li>
+                    <li type="saleNum">按销量</li>
+                    <li type="salePrice">按价格</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="tab-con my-prescription scroll-list-outer" id="prescriptionScroll" style="display:none;">
+            <ul id="myFavoriteMedicineList" class="cm-list cm-list-t-img-ctrl"></ul>
+        </div>
+
+    </div>
+
+    <div class="recommond-tip-panel">
+        <span>已经选择<b id="recommandNumber">0</b>个药物</span>
+        <a id="recommandMedical" class="recommand-but">推荐<br>用药</a>
+    </div>
+
+    <script src="../../js/config.js"></script>
+    <script src="../../js/dist/components.min.js"></script>
+    <script src="../../js/dist/medical-search.min.js"></script>
+</body>
+</html>

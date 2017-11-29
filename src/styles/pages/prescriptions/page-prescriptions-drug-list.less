@@ -1,0 +1,127 @@
+.prescriptions-drug-list{
+    margin-bottom: 70px;
+    h6{
+        height: 25px;
+        line-height: 25px;
+        font-size: 14px;
+        color: @fontLightBlack;
+        font-weight: normal;
+    }
+    input{
+        font-size: 14px;
+    }
+
+    .pres-title{
+        position: relative;
+        background: @bgWhite;
+
+        input[type=text]{
+            border: 0;
+            padding: 20px 50px 20px 10px;
+            width: 100%;
+            font-size: @font16;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        i.edit{
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50px;
+            height: 56px;
+            line-height: 56px;
+            text-align: center;
+            background: url(images/edit_03.png) no-repeat center 55%;
+            background-size: 55%;
+        }
+    }
+
+    ul{
+        li{
+            position: relative;
+            padding: 10px;
+            background: @bgWhite;
+            background: @bgWhite url("images/base/boder-gray.gif") repeat-x left bottom;
+            min-height: 100px;
+
+            &:last-child{
+                background: @bgWhite;
+            }
+
+            .left-img-box{
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                width: 100px;
+                height: 100px;
+                box-shadow: 0 0 0.5px @fontLightBlack;
+                img{
+                    width: 100px;
+                    height: 100px;
+                    display: block;
+                }
+            }
+
+            .right-info-box{
+                padding-left: 110px;
+                padding-right: 38px;
+
+                .title{
+                    margin-bottom: 10px;
+                    color: @fontBlack;
+                    font-size: @font16;
+                    .text-single-line-ellipsis(30px, 30px);
+                }
+
+                p{
+                    font-size: @font16;
+                    color: @fontGray;
+                    .text-single-line-ellipsis(30px, 30px);
+
+                    &:last-child{
+                        margin-bottom: 0;
+                    }
+
+                    b{
+                        display: inline-block;
+                        color: @fontRed;
+                        font-size: @font16;
+                        font-weight: bold;
+                        margin-right: 10px;
+                    }
+
+                    span{
+
+                        del{
+                            color: @borderGray;
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+
+            i{
+                display: none;
+                position: absolute;
+                right: 10px;
+                top: 50%;
+                width: 28px;
+                height: 28px;
+                margin-top: -14px;
+                background: url(images/delete.png) no-repeat center top;
+                background-size: 100%;
+            }
+        }
+    }
+}
+
+footer{
+    a.del{
+        background: @bgOrange;
+    }
+
+    a.add:before{
+        content: '';
+    }
+}

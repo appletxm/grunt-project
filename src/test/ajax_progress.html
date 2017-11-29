@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='UTF-8'>
+	<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+	<title>ajax progress</title>
+	<!--<link href='../../styles/global.css' rel='stylesheet' media='all'>-->
+	<style>
+		.ui_button{
+			background: orangered;
+			color: #fff;
+			display: block;
+			width: 100px;
+			height: 20px;
+			text-align: center;
+			line-height: 20px;
+			border-radius: 10px;
+			font-size: 12px;
+		}
+	</style>
+</head>
+<body>
+
+	<label class="ui_button ui_button_primary" for="xFile">上传文件</label>
+	<form enctype="multipart/form-data" style="display:none;">
+		<input id="xFile" type="file" accept="audio/*,video/*,image/*" capture="camera" multiple />
+	</form>
+
+	<!--<img id="imageObj" src="assets/autum.jpeg" />-->
+
+	<script>
+		function createXHR() {
+			if (typeof XMLHttpRequest != 'undefined') {
+				return new XMLHttpRequest();
+			} else if (typeof ActiveXObject != 'undefined') {
+				if (typeof arguments.callee.activeXString != 'string') {
+					var versions = ['MSXML2.XMLHttp.6.0', 'MSXML2.XMLHttp.3.0', 'MSXML2.XMLHttp'],
+						i, len;
+
+					for (i = 0, len = versions.length; i < len; i++) {
+						try {
+							var xhr = new ActiveXObject(versions[i]);
+							arguments.callee.activeXString = versions[i];
+							return xhr;
+						} catch (ex) {
+							//跳过
+						}
+					}
+				}
+
+				return new ActiveXObject(arguments.callee.activeXString);
+			} else {
+				throw new Error('No XHR object available.');
+			}
+		}
+
+		/*upload progress*/
+		/*
+		 //侦查当前附件上传情况
+		 xhr.upload.onprogress = function(evt){
+		 //侦查附件上传情况
+		 //通过事件对象侦查
+		 //该匿名函数表达式大概0.05-0.1秒执行一次
+		 //console.log(evt);
+		 //console.log(evt.loaded);  //已经上传大小情况
+		 //evt.total; 附件总大小
+		 var loaded = evt.loaded;
+		 var tot = evt.total;
+		 var per = Math.floor(100*loaded/tot);  //已经上传的百分比
+		 var son =  document.getElementById('son');
+		 son.innerHTML = per+'%';
+		 son.style.width=per+'%';
+		 }  
+		 */
+
+		var xhr = createXHR();
+		xhr.onload = function () {
+			if ((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304) {
+				var restult = xhr.responseText;
+				console.info('success');
+			} else {
+				console.info('Request was unsuccessful: ' + xhr.status);
+			}
+		};
+
+		xhr.onprogress = function (event) {
+			console.info(event);
+			if(event.lengthComputable){
+				console.info('-----' + (event.loaded/event.total).toFixed(2)*100 + '%' + '-----');
+			}
+		};
+
+		xhr.open('get', 'assets/data.json.js', true);
+		//xhr.open('get', 'assets/autum.jpeg', true);
+		xhr.send(null);
+
+
+		/*var imageObj = document.querySelector('#imageObj');
+		imageObj.addEventListener('load', function(event){
+			console.info('load imgage event:', event);
+		});
+		imageObj.addEventListener('progress', function(event){
+			console.info('progress imgage event:', event);
+		});*/
+	</script>
+	
+</body>
+</html>

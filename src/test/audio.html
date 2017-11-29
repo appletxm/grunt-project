@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>audio</title>
+	<!--<link href="../../styles/global.css" rel="stylesheet" media="all">-->
+</head>
+<body>
+	<!-- <audio>
+		<source src="http://yun.dabai.7lk.com/cr/52393/11783/20150928/6199540976856334336.mp3" type="audio/mpeg">
+	<audio> -->
+
+	<audio id="audio_0" controls="controls" >
+		<source src="http://yun.dabai.7lk.com/cr/52393/11783/20150928/6199540976856334336.mp3" type="audio/mpeg"/>
+	</audio>
+
+	<audio id="audio_1" controls="controls" preload="preload">
+		<source src="http://yun.dabai.7lk.com/cr/52393/11783/20150928/6199540976856334336.mp3" type="audio/mpeg"/>
+	</audio>
+
+	<audio id="audio_2" src="http://yun.dabai.7lk.com/cr/52393/11783/20150928/6199540976856334336.mp3" type="audio/mpeg" controls="controls"></audio>
+
+	<audio id="audio_3" src="../assets/audio.mp3" type="audio/mp3" controls="controls"></audio>
+
+	<input type="button" id="audio_button_1" value="play" />
+
+	<div>
+		<span>old amr</span><br/>
+		<audio id="audio_3" src="../assets/old.mp3" type="audio/mp3" controls="controls"></audio>
+	</div>
+
+	<div>
+		<span>old amr no mp3 superfix</span><br/>
+		<audio id="audio_3" src="../assets/old_2.amr" type="audio/amr" controls="controls"></audio>
+	</div>
+
+	<div>
+		<span>new mp3</span><br/>
+		<audio id="audio_3" src="../assets/new.mp3" type="audio/mp3" controls="controls"></audio>
+	</div>
+
+	<script>
+		var audio = document.querySelector('#audio_1');
+		var button = document.querySelector('#audio_button_1');
+		button.onclick = function(){
+			audio.play();
+		}
+	</script>
+	
+</body>
+</html>

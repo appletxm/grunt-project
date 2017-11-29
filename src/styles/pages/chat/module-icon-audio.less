@@ -1,0 +1,97 @@
+//audio icon
+@-webkit-keyframes playing {
+	from {
+		width: 6px;
+		height: 6px;
+		border-width: 10px;
+		border-radius: 13px;
+		top: -3px;
+		left: -2.8px;
+	}
+
+	to {
+		width: 14px;
+		height: 14px;
+		border-width: 6px;
+		border-radius: 13px;
+		top: -3px;
+		left: -3px;
+	}
+
+	to {
+		width: 22px;
+		height: 22px;
+		border-width: 4px;
+		border-radius: 15px;
+		top: -5px;
+		left: -5px;
+	}
+
+}
+
+.audio-outer{
+	position: relative;
+	min-width: 30px;
+	height: 24px;
+	display: block;
+}
+
+.audio-msg {
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	border-radius: 10px;
+	display: block;
+	overflow: hidden;
+	top: 50%;
+	margin-top: -10px;
+	right: -5px;
+
+	&:before{
+		display: block;
+		width: 16px;
+		height: 16px;
+		position: absolute;
+		top: 2px;
+		left: -2px;
+		content: '\e90a';
+		font-size: 16px;
+		color: @fontAudioColor;
+	}
+
+	&.stop-play {
+		.mask {
+			display: none;
+		}
+	}
+
+	&.start-play {
+		-webkit-border-radius: 10px;
+
+		.mask {
+			-webkit-animation: playing 0.5s ease-in infinite;
+		}
+	}
+
+	&.from-patient {
+		-webkit-transform: rotate(180deg);
+		right: auto;
+		left: -5px;
+
+		.mask{
+			border-color: @bgWhite;
+		}
+	}
+
+	.mask {
+		display: block;
+		position: absolute;
+
+		width: 6px;
+		height: 6px;
+		border: 10px solid @msgBgColor;
+		border-radius: 13px;
+		top: -3px;
+		left: -2.8px;
+	}
+}

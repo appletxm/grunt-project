@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<title>患者姓名</title>
+	<link href="../../styles/base.css" rel="stylesheet" media="all">
+	<link href="../../styles/page-chat.css" rel="stylesheet" media="all">
+</head>
+<body>
+<div id="chatMain" class="chat-main">
+	<section class="chat-msg-list"></section>
+
+	<div class="chat-control-panel" id="chatControlPanel">
+		<div class="panel-msg-opt">
+			<div><textarea placeholder="点击+号 推荐用药" id="msgText"></textarea></div>
+			<a class="chat-opt-but but-audio" event="openAudio"></a>
+			<a class="chat-opt-but but-add" event="openExternal"></a>
+			<a class="chat-opt-but chat-but-normal sendMsg" id="sendMsg" style="display: none;" event="sendMsg">发送</a>
+		</div>
+
+		<div class="panel-msg-opt panel-audio-opt" id="audioOptPanel" style="display: none;">
+			<a class="chat-opt-but but-keyboard" event="closeAudio"></a>
+			<div id="audioRecordButton" event="doRecord">按住 说话</div>
+		</div>
+
+		<div id="externalPanel" class="panel-external">
+			<a class="chat-ex-icons chat-icon-medicine" event="recommendMedical"></a>
+			<a class="chat-ex-icons chat-icon-img" event="sendImage"></a>
+			<a class="chat-ex-icons chat-icon-note" event="markInformation"></a>
+			<a class="chat-ex-icons chat-icon-prescription" event="recommendPrescription"></a>
+		</div>
+	</div>
+
+</div>
+
+	<!--<script src="../../js/config.js"></script>
+	<script src="../../js/dist/Compatible.min.js"></script>
+	<script src="../../js/dist/stringUtils.min.js"></script>
+	<script>
+		function doSkip(){
+			var searchStr = window.location.search.replace('?', '');
+			var urlParams;
+			var url = 'chat.html';
+
+			/*self.urlParams['patient_id'] = window.localStorage.getItem('patient_id');
+			 self.urlParams['doctor_id'] = window.localStorage.getItem('doctor_id');
+			 self.urlParams['patient_name'] = window.localStorage.getItem('patient_name');*/
+
+			urlParams = searchStr.getValueFromUrl();
+			alert(JSON.stringify(urlParams));
+
+			url += '?';
+			url += 'patient_id=' + urlParams['patient_id'];
+			url += '&doctor_id=' + urlParams['doctor_id'];
+			url += '&patient_name' + urlParams['patient_name'];
+
+			window.history.pushState({}, 'chat', url);
+
+			window.location.href = url;
+		}
+
+		doSkip();
+
+	</script>-->
+	
+</body>
+</html>

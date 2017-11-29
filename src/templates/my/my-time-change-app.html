@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<title>大白云诊时间</title>
+	<link href="../../styles/base.css" rel="stylesheet" media="all">
+	<link href="../../styles/page-my.css" rel="stylesheet" media="all">
+</head>
+<body>
+	<div class="baiyu-outer">
+		<div id="baiyuTime" class="hospital-time baiyu-time">
+			<dl class="basic-row">
+				<dt>周一</dt>
+				<dd forWeek="0"> </dd>
+			</dl>
+
+			<dl class="basic-row">
+				<dt>周二</dt>
+				<dd forWeek="1"> </dd>
+			</dl>
+
+			<dl class="basic-row">
+				<dt>周三</dt>
+				<dd forWeek="2"> </dd>
+			</dl>
+
+			<dl class="basic-row">
+				<dt>周四</dt>
+				<dd forWeek="3"> </dd>
+			</dl>
+
+			<dl class="basic-row">
+				<dt>周五</dt>
+				<dd forWeek="4"> </dd>
+			</dl>
+
+			<dl class="basic-row">
+				<dt>周六</dt>
+				<dd forWeek="5"> </dd>
+			</dl>
+
+			<dl class="basic-row">
+				<dt>周日</dt>
+				<dd forWeek="6"> </dd>
+			</dl>
+		</div>
+
+		<a class="but but-inline delete" style="display:none;" id="deleteSelectedTime">删除选中时间</a>
+	</div>
+
+	<footer>
+		<!--<a class="save" id="saveTime">保存</a>-->
+		<a class="add" id="addNewTime">新增出诊时间</a>
+	</footer>
+
+	<div id="userTimePanel" class="user-time-panel">
+		<div class="mask"></div>
+		<div class="content">
+			<a class="close-pop"></a>
+			<div id="startTime" class="time-panel">
+				<h1>开始时间</h1>
+				<div class="slide-panel"></div>
+				<input id="resetTime" type="button" value="移除" />
+			</div>
+			<div id="endTime" class="time-panel">
+				<h1>结束时间</h1>
+				<div class="slide-panel"></div>
+				<input id="keepTime" type="button" value="保存" />
+			</div>
+		</div>
+		<div class="footer"></div>
+	</div>
+
+
+	<script src="../../js/config.js"></script>
+	<script src="../../js/dist/components.min.js"></script>
+	<script src="../../js/dist/my-time-change-app.min.js"></script>
+</body>
+</html>

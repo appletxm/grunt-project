@@ -1,0 +1,101 @@
+.point-admin{
+	padding-bottom:130px;
+
+	dl{
+		display:block;
+		padding:10px;
+		background: @bgWhite;
+		border-bottom: 1px solid @borderGray;
+		color: @fontLightBlack;
+
+		b{
+			display:inline;
+			font-size: @font36;
+		}
+
+		dt{
+			display:block;
+
+			i{
+				font-family: @fontFamily;
+				float: right;
+				margin-top: 5px;
+				padding:0;
+				border: 0;
+				text-align:right;
+				color: @fontBlueHigh;
+			}
+
+		}
+		dd{
+			display: block;
+			text-align: center;
+			padding: 10px 0;
+		}
+
+		&.high{
+			color: @fontWhite;
+			background: @bgLightGreen;
+		}
+	}
+
+	.form-input-row{
+		padding:0;
+
+		dt{
+			width: 130px;
+			text-align: left;
+			color: @fontBlack;
+		}
+
+		dd{
+			margin-left:130px;
+			position:relative;
+			line-height:@menuHeight;
+			height:@menuHeight;
+			padding:0;
+
+			&.need-skip{
+				.after-arrow();
+				padding-right: 35px;
+			}
+
+
+			b{
+				color: @fontOrange;
+			}
+		}
+	}
+}
+
+.point-cash{
+	.form-input-row{
+		position: relative;
+		font-size: @font16;
+		dt{
+			position: absolute;
+			top:0;
+			left:0;
+			line-height:@menuHeight;
+			text-indent: 10px;
+		}
+		dd{
+			text-align: right;
+			padding-right: 10px;
+			color: @fontGray;
+		}
+	}
+}
+
+.point-admin-footer{
+	height: 90px;
+	.inner{
+		padding: 15px;
+		height: 60px;
+	}
+	a{
+		height: 60px;
+		line-height: 60px;
+		.radius();
+	}
+}

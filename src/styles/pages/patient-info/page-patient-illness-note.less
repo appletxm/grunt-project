@@ -1,0 +1,44 @@
+.patient-illness-note{
+    padding-bottom: 60px;
+    h6{
+        color: @fontLightBlack;
+        padding: 10px 10px 0 10px;
+        line-height: 36px;
+        font-weight: normal;
+        font-size: @font14;
+    }
+
+    ul{
+        background: @bgWhite;
+        padding: 0 10px;
+        li{
+            background: url("images/base/boder-gray.gif") repeat-x left bottom;
+
+            p{
+                padding: 10px 0;
+                color: @fontLightBlack;
+                font-size: @font14;
+            }
+
+            .time{
+                color: @fontBlueHigh;
+            }
+
+            .time:before{
+                content: @fa-var-clock-o;
+                margin-right: 5px;
+                .icon();
+            }
+
+            .note{
+                padding: 0;
+                font-size: @font16;
+                color: @fontBlack;
+            }
+        }
+    }
+
+    .no-data-tip:after{
+        content: "还没有给该病人添加相关备注";
+    }
+}

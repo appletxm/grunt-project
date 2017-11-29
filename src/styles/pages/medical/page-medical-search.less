@@ -1,0 +1,31 @@
+.medical-search{
+
+	.list{
+		a{
+			display: block;
+			border-bottom: 1px solid @borderGray;
+			padding:10px;
+			position:relative;
+
+			.after-arrow();
+		}
+	}
+
+	.search-history{
+		display:block;
+		dt{
+			display:block;
+			padding: 10px;
+		}
+		dd{
+			display:block;
+			background: @bgWhite;
+			.list();
+		}
+	}
+
+	.search-tip-list{
+		background: @bgWhite;
+		.list();
+	}
+}

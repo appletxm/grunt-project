@@ -1,0 +1,28 @@
+.my-download-app{
+	a{
+		background:@bgWhite;
+		color:@fontBlack;
+		display:block;
+		height: @menuItemHeight;
+		line-height: @menuItemHeight;
+		padding: 0 10px;
+		border-bottom:1px solid @borderGray;
+		position:relative;
+
+		.after-arrow();
+
+		&:before{
+			.icon();
+			color:@fontBlueHigh;
+			font-size:@font24;
+			content: @fa-var-android;
+			margin-right:10px;
+		}
+
+		&.apple{
+			&:before{
+				content: @fa-var-apple;
+			}
+		}
+	}
+}

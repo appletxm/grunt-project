@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<title>我的二维码</title>
+	<link href="../../styles/base.css" rel="stylesheet" media="all">
+	<link href="../../styles/page-my.css" rel="stylesheet" media="all">
+</head>
+<body>
+	<div id="myCode" class="my-code slide-pic">
+		<div class="code-panel patient-code-panel">
+			<h2>邀请患者</h2>
+			<div class="doctor-info"></div>
+			<div class="tab-con patient_code" id="patient_qr"></div>
+		</div>
+
+		<div class="code-panel doctor-code-panel">
+			<h2>邀请医生</h2>
+			<div class="doctor-info"></div>
+			<div class="tab-con doctor_code" id="doctor_qr"></div>
+		</div>
+
+		<ul class="dot">
+			<li class="selected"></li>
+			<li></li>
+		</ul>
+	</div>
+
+	<div class="no-data-tip no-code" style="display:none;"></div>
+
+	<script src="../../js/libs/weixin.min.js"></script>
+
+    <script src="../../js/config.js"></script>
+	<script src="../../js/dist/components.min.js"></script>
+	<script src="../../js/dist/my-code.min.js"></script>
+
+</body>
+</html>

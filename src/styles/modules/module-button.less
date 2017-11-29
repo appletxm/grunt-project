@@ -1,0 +1,179 @@
+.add-big-but{
+	display:block;
+	margin: 10px 0;
+	border:0;
+	border-radius:0;
+	height: @bigButHeight;
+	line-height:@bigButHeight;
+	text-align: center;
+	border-shadow: 0 0 5px rgba(0,0,0,0.2);
+	padding: 5px 0;
+
+	&:before{
+		.icon();
+
+		content: @fa-var-plus-recommend;
+		margin-right: 10px;
+	}
+}
+
+.orange-but{
+	.icon();
+	position:absolute;
+	top:23px;
+	right:10px;
+	width:50px;
+	height:50px;
+	background: @bgOrange;
+	line-height: 50px;
+	color: @fontWhite;
+	content:@fa-var-times;
+	font-size: @font24;
+	text-align:center;
+	border-radius: 25px;
+	-webkit-border-radius: 25px;
+}
+
+.but{
+	.radius();
+	.icon();
+
+	display:inline-block;
+	padding:10px 20px;
+
+	&.but-only-border{
+		background: @bgWhite;
+		color: @bgBlue;
+		border:1px solid @bgBlue;
+
+		&:active{
+			background:@bgBlue;
+			color:@fontWhite;
+		}
+
+		padding: 5px 10px;
+	}
+
+	&.but-inline{
+		height:30px;
+		line-height: 30px;
+		background: @bgWhite;
+		color: @bgBlue;
+		text-align:center;
+		margin: 10px;
+		&:before{
+			margin-right: 5px;
+		}
+	}
+
+	&.delete{
+		&:before{
+			content:@fa-var-times;
+		}
+	}
+
+
+	&.but-delete-orange{
+		padding: 0;
+		background: @bgOrange;
+		width: 30px;
+		height:30px;
+		line-height: 30px;
+		border-radius: 15px;
+		-webkit-border-radius: 15px;
+
+		&:before{
+			color: @fontWhite;
+			content:@fa-var-times;
+
+		}
+	}
+
+}
+
+footer{
+	position: fixed;
+	bottom:0;
+	left:0;
+	width:100%;
+	height: @footerButtonHeight;
+	text-align:center;
+	font-size: @font18;
+
+	a{
+		display:block;
+		background: @bgBlue;
+		color: @fontWhite;
+		border:0; 
+		height: 100%;
+		line-height: @footerButtonHeight;
+		font-size: @font18;
+
+		&.cancel{
+			background: @fontLightBlack;
+		}
+	}
+
+	.xa{
+		position:absolute;
+		top:0;
+		height: @footerButtonHeight;
+	}
+
+	&.x3{
+		
+
+		a:first-child{
+			left:0;
+		}
+
+		a{
+			width: 34%;
+			left: 33%;
+			.xa();
+		}
+		a:last-child{
+			width: 33%;
+			right: 0;
+			left: auto;
+		}
+	}
+
+	&.x2{
+		a{
+			width: 50%;
+			.xa();
+		}
+		a:first-child{
+			left:0;
+		}
+		a:last-child{
+			right: 0;
+			left: auto;
+		}
+	}
+
+	&.no-need-fixed{
+		background: none;
+		position: static;
+
+		a{
+			display: block;
+			margin: 30px 12px;
+			.radius();
+			&.save{
+				&:active{
+					background: @bgLightBlue;
+				}
+			}
+		}
+	}
+
+	&.no-bg{
+		a{
+			background: transparent;
+			color: @fontBlueHigh;
+			font-size: @font14;
+		}
+	}
+}

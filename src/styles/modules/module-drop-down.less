@@ -1,0 +1,38 @@
+.drop-down {
+	border: 1px solid @borderGray;
+	display: block;
+	width: 100px;
+	position: absolute;
+	top:0;
+	left:0;
+
+	i{
+		text-indent: 5px;
+		&:after{
+			position: absolute;
+			right: 5px;
+			top: 10px;
+			content: @fa-var-angle-down;
+			.icon();
+		}
+	}
+
+	ul {
+		display: block;
+		position: absolute;
+		top: 30px;
+		left: -1px;
+		width: 100%;
+		z-index: 3;
+		list-style: none;
+		border: 1px solid @borderGray;
+		background: @bgWhite;
+
+		li {
+			display: block;
+			color: @borderGray;
+			border-top: 1px solid @borderGray;
+			padding: 0 0 0 5px;
+		}
+	}
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<title>申请提现</title>
+	<link href="../../styles/base.css" rel="stylesheet" media="all">
+	<link href="../../styles/page-point.css" rel="stylesheet" media="all">
+</head>
+<body>
+	<div class="my-time point-admin point-cash">
+		<dl class="form-input-row" id="chooseBank">
+			<dt>银行卡</dt>
+			<dd class="need-skip" id="bank">选择银行卡</dd>
+		</dl>
+		<dl class="form-input-row">
+			<dt>可提现金额</dt>
+			<dd><b id="canMentionMonYuan">0</b>元</dd>
+			<dd style="display:none"><b id="canMentionMon">0</b>分</dd>
+		</dl>
+
+		<p class="tip-show-msg">预计审核到帐时间需要7个工作日</p>
+	</div>
+
+	<footer>
+		<a class="save" id="save">确 认</a>
+	</footer>
+
+    <script src="../../js/config.js"></script>
+	<script src="../../js/dist/components.min.js"></script>
+    <script src="../../js/dist/point-cash.min.js"></script>
+</body>
+</html>

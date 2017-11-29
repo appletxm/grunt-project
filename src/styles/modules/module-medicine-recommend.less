@@ -1,0 +1,327 @@
+.add-recommond{
+	position:absolute;
+	top: 50%;
+	right: -30px;
+	margin: -@checkboxRadius/2 0;
+	width: @checkboxRadius;
+	height:@checkboxRadius;
+	-webkit-border-radius: @checkboxRadius/2 + 1px;
+	background-image: url(images/add.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 100% 100%;
+
+	&.selected{
+		background-image: url(images/delete.png);
+	}
+}
+
+.recommond-tip-panel{
+	background: @bgLightGray;
+	height: @recommondTip;
+	position: fixed;
+	left:0;
+	bottom:0;
+	width: 100%;
+	.shadow();
+
+	span{
+		line-height: @recommondTip;
+		font-size: @font16;
+		margin-left: 10px;
+	}
+
+	.recommand-but{
+		position: absolute;
+		top: -40px;
+		right: 10px;
+		width: 60px;
+		height: 60px;
+		line-height: 20px;
+		border-radius: 50%;
+		-webkit-border-radius: 50%;
+		background: @checkboxAnimateBgGray;
+		text-align: center;
+		color: @fontWhite;
+		font-size: @font24;
+		line-height: 30px;
+		padding: 10px;
+		.shadow();
+
+		&.actived{
+			background: @bgBlue;
+			color: @fontWhite;
+		}
+	}
+
+	b{
+		display: inline;
+		color: @fontBlueHigh;
+		font-weight: bold;
+	}
+}
+
+.recommand-tip-box{
+	padding: 10px;
+
+	h1{
+		font-size: @font16;
+		color: @fontBlueHigh;
+		border-bottom: 1px solid @borderGray;
+		padding: 0 20px 10px 0;
+		font-weight: normal;
+		.text-dot();
+
+		a{
+			top: 12px;
+			right: 10px;
+		}
+	}
+
+	.pro-usage{
+		line-height: 20px;
+		font-size: @font14;
+		overflow: auto;
+		padding: 5px;
+		background: @bgLightGray;
+		margin-top: 10px;
+	}
+
+	dl{
+		display: block;
+		position:relative;
+		line-height:30px;
+		font-size: @font14;
+		margin-top: 10px;
+
+		dt{
+			display: block;
+			position:absolute;
+			top:0;
+			left:0;
+			width: 40px;
+			line-height: 30px;
+			text-align: right;
+		}
+		dd{
+			display:block;
+			margin-left: 50px;
+			position: relative;
+			min-height: 30px;
+			line-height: 30px;
+			box-sizing: border-box;
+		}
+
+		input, select{
+			position: absolute;
+			top:0;
+			left:0;
+			bottom:0;
+			right:0;
+			width: 100%;
+			border: 1px solid @borderGray;
+			font-size: @font14
+		}
+
+		textarea{
+			font-size: @font14;
+			height: 50px;
+			width: 100%;
+			border: 0;
+			padding: 0;
+			display:block;
+		}
+
+		select{
+			height:30px;
+			line-height:30px;
+		}
+	}
+
+	.text-outer{
+		border:1px solid @borderGray;
+		padding: 5px;
+	}
+
+	.unit-list{
+		a{
+			display: inline-block;
+			height: 28px;
+			line-height: 28px;
+			padding: 0 10px;
+			margin-right: 5px;
+			background: @bgWhite;
+			border-radius: 8px;
+			border: 1px dashed @borderBlue;
+
+			&.selected{
+				background: @bgBlue;
+				border: 1px solid @borderBlue;
+				color: @fontWhite;
+			}
+		}
+
+		i{
+			display: block;
+			margin-top: 5px;
+		}
+	}
+
+	.gapTop{
+		margin-top: @msgGap*2;
+	}
+}
+
+.do-save-recommond{
+	display: block;
+	height:  @bigestButHeight;
+	line-height: @bigestButHeight;
+	color: @fontWhite;
+	font-size: @font18;
+	text-align: center;
+	background: @bgBlue;
+	margin-top: 10px;
+	.radius();
+}
+
+.recommand-list-box{
+	position: relative;
+	padding:0;
+	height: 100%;
+	overflow: hidden;
+
+	.list-body{
+		position:absolute;
+		top: 45px;
+		bottom: 60px;
+		overflow: auto;
+		width: 100%;
+	}
+
+	ul{
+		display:block;
+		list-style:none;
+		margin: 0 10px;
+		border-bottom: 1px solid @bgGray;
+	}
+
+	li{
+		display:block;
+		position:relative;
+		min-height: @recommandDelete;
+		padding: 10px;
+		margin: 0;
+		font-size: @font14;
+
+		span{
+			color: @fontBlack;
+			display: block;
+			margin: 0 0 0 15px;
+			&.no-gap{
+				margin:0;
+			}
+		}
+
+		a{
+			position: absolute;
+			display: block;
+
+			&.add-recommond{
+				left: 0;
+				top: 50%;
+				width: @recommandDelete;
+				height: @recommandDelete;
+				margin-top: -1 * @recommandDelete / 2;
+			}
+		}
+	}
+
+	h1{
+		position: absolute;
+		top:0;
+		text-indent: 10px;
+		width: 100%;
+		padding:0;
+		line-height:40px;
+		a{
+			top: 12px;
+			right: 10px;
+		}
+	}
+
+	.do-save-recommond{
+		position: absolute;
+		bottom:10px;
+		left: 10px;
+		right: 10px;
+
+		display: block;
+	}
+}
+
+.recommend-save-prescription{
+	padding: 0 10px;
+	font-size: @font14;
+
+	span{
+		display: block;
+
+		&.input-name{
+			position:relative;
+			height: 50px;
+			line-height: 42px;
+
+			em{
+				display: block;
+				position: absolute;
+				top: 0;
+				left: 60px;
+				bottom: 0;
+				right:0;
+				text-align: right;
+			}
+			input{
+				border:1px solid @borderGray;
+				width:100%;
+				height:40px;
+				font-size: @font14;
+				background-color: transparent;
+			}
+		}
+
+		&.checked-outer{
+			position: relative;
+			line-height: 20px;
+			padding: 20px 5px 20px 23px;
+			b{
+				width:16px;
+				height:16px;
+				font-size: @font12;
+				top:20px;
+				margin-top:0;
+				&:before{
+					top:0;
+					line-height:16px;
+				}
+			}
+		}
+	}
+
+	i{
+		color: @fontLightGray;
+		padding-left: 50px;
+		line-height: 30px;
+	}
+}
+
+/*
+::-webkit-scrollbar
+{
+	width: 5px;
+	background-color: @bgGray;
+}
+
+::-webkit-scrollbar-thumb
+{
+	background-color: @bgBlue;
+}*/

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<title>我的咨询</title>
+	<link href="../../styles/base.css" rel="stylesheet" media="all">
+	<link href="../../styles/page-patient.css" rel="stylesheet" media="all">
+</head>
+<body>
+<ul id="tabControl" class="tab tab-x2">
+	<li class="selected" for="patient-qna-list" id="patient-qna-list"><span>咨询列表</span></li>
+	<li for="patient-list" id="my-patient"><span>患者列表</span></li>
+</ul>
+
+<div class="patient-admin">
+	<div  class="tab-con patient-qna-list" id="patient-latest-list" style="display:block;"></div>
+
+	<div class="tab-con patient-list patient-list-freeze"  style="display:none;">
+		<div id="searchBinObj" class="search-freeze"></div>
+
+		<div id="listContent" class="list-content">
+			<!--TODO just comment for next version-->
+			<a id="latestPatient" style="display: none;" class="latest-patient has-new-patient">新患者 <span class="dot-red"></span></a>
+
+			<div id="patient-list" class="patient-abc-list"></div>
+
+			<div id="patient-search-list" class="patient-abc-list" style="display:none;"></div>
+		</div>
+	</div>
+
+</div>
+
+<script id="qna-list-tpl" type="text/html">
+	<% for(var i = 0, len = list.length; i < len; i++) { %>
+	<li class="item <%= list[i].topClass %>">
+		<div data-url="<%= list[i][1].chatUrl %>" onclick="patientAdmin.showPatientChatMessage(event);">
+			<h3 class="tit"><%= (list[i][1].patient_remark || list[i][1].patient_name) %></h3>
+			<p class="desc"><%= list[i][1].last_msg %></p>
+			<p class="date"><%= list[i][1].last_time %></p>
+		</div>
+
+		<span class="header-icon">
+			<img onclick="patientAdmin.showPatientInfo(event);"
+				data-patient-id="<%= list[i][0] %>"
+				data-patient-name="<%= (list[i][1].patient_remark || list[i][1].patient_name) %>"
+				data-patient-img="<%= list[i][1].patient_img %>"
+				data-doctor-id="<%= list[i][1].doctorId %>"
+				src="<%= list[i][1].patient_img %>?s=t"
+				class="img"
+				width="46"
+				height="46">
+		</span>
+
+		<% if (list[i][1].countNo != '' || list[i][1].countNo != 0) { %>
+		<i data-url="<%= list[i][1].chatUrl %>" class="ctrl ctrl-circle" onclick="patientAdmin.showPatientChatMessage(event);"><%= list[i][1].countNo %></i>
+		<% } %>
+	</li>
+	<% } %>
+</script>
+
+<script id="patient-list-tpl" type="text/html">
+	<ul class="cm-list cm-list-border-top cm-list-t-img">
+		<% for(var i = 0, len = list.length; i < len; i++) { %>
+		<li class="item" data-url="<%= list[i].chatUrl %>" onclick="patientAdmin.showPatientChatMessage(event);">
+			<div>
+				<h3 class="tit"><%= (list[i].remarkName || list[i].name) %></h3>
+				<p class="desc"><%= (list[i].genderStr + ' ' + list[i].ageStr) %></p>
+			</div>
+			<span class="header-icon">
+				<img src="<%= list[i].patientIcon %>?s=t"
+					 class="img"
+					 width="46"
+					 height="46">
+			</span>
+		</li>
+		<% } %>
+	</ul>
+</script>
+
+<script src="../../js/config.js"></script>
+<script src="../../js/dist/components.min.js"></script>
+<script src="../../js/dist/patient-admin.min.js"></script>
+
+</body>
+</html>

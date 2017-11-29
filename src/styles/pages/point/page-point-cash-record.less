@@ -1,0 +1,168 @@
+.point-cash-record{
+	padding-bottom: @footerTipHeight + 10px;
+
+	.tip-show-msg{
+		padding-bottom: 0;
+	}
+
+	dl{
+		display:block;
+		padding: 10px;
+		background: @bgWhite url("images/base/boder-gray.gif") repeat-x left bottom;
+
+		&:last-child{
+			background: @bgWhite;
+		}
+
+		dt{
+			display:block;
+			position:relative;
+			line-height: 36px;
+			font-size: @font16;
+		}
+
+		dd{
+			display:block;
+			color: @fontLightGray;
+			position:relative;
+			line-height: 24px;
+			font-size: @font14;
+
+			span{
+				position: static;
+				font-size: @font14;
+				display: block;
+				margin:0 0 0 150px;
+				text-align: right;
+			}
+
+			.green{
+				color: @fontGreen;
+			}
+
+			.red{
+				color: @fontRed;
+			}
+
+			i{
+				position:absolute;
+				left:0;
+				width: 150px;
+			}
+		}
+
+		span{
+			position:absolute;
+			right: 0;
+			&.black{
+				font-size: @font14;
+			}
+			&.line{
+				text-decoration:line-through;
+			}
+			&.red{
+				color: @fontRed;
+			}
+
+			&.orange{
+				color: @fontOrange;
+			}
+		}
+
+		&.need-skip{
+			position: relative;
+			padding-right: 20px;
+			span{
+				right: 10px;
+			}
+
+			dd{
+				span{
+					margin-right: 10px;
+				}
+			}
+
+			.after-arrow();
+
+			&:after{
+				width: 20px;
+			}
+		}
+	}
+
+
+	ul{
+		displsy: block;
+		list-style: none;
+		background: @bgWhite;
+		padding: 10px;
+
+		li{
+			display:block;
+			color: @fontRed;
+
+			span{
+				color: @fontBlack;
+			}
+		}
+	}
+
+	.product-list{
+		background: @bgWhite;
+		padding-bottom: 30px;
+
+		header{
+			padding: 10px;
+			border-top:1px solid @borderGray;
+		}
+
+		dl{
+			display:block;
+			border-bottom:1px solid @borderGray;
+			margin: 0 15px;
+			color: @fontLightBlack;
+
+			dd,dt{
+				display:block;
+			}
+
+			dt{
+				font-weight: 500;
+				-webkit-font-smoothing:auto;
+			}
+
+			span, i, b, em{
+				font-size: @font14;
+			}
+
+			i,b,em{
+				display: inline;
+			}
+
+			span{
+				position: static;
+				color: @fontLightBlack;
+				margin: 0 10px;
+				em{
+					text-decoration: line-through;
+				}
+			}
+
+			b,i{
+				color: @fontRed;
+			}
+		}
+	}
+
+	.no-data-tip{
+		&:after{
+			content:"没有提现记录";
+		}
+	}
+
+	.no-point-list-tip{
+		&:after{
+			content:"没有积分记录";
+		}
+	}
+}

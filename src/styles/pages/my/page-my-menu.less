@@ -1,0 +1,22 @@
+.my-menu{
+	a{
+		.menu-line();
+
+		padding-left: @leftIconGap;
+		background: @bgWhite;
+
+		span{
+			position:absolute;
+			top:0;
+			right: @rightGap;
+			height: 100%;
+			line-height: @menuItemHeight;
+			vertical-align: middle;
+			color: @fontRed;
+		}
+
+		&:active{
+			background:@borderGray;
+		}
+	}
+}

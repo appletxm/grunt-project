@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<title>border test</title>
+	<style>
+		div{
+			margin-bottom: 20px;
+			font-size: 14px;
+		}
+		.border-0{
+			border: 0.07em solid #000;
+		}
+
+		.border-1{
+			margin-bottom: 20px;
+			border:none;
+			border-radius: 3px;
+			position: relative;
+		}
+
+		.border-1:before{
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 200%;
+			height: 200%;
+
+			border: 1px solid #d0d0d0;
+			-webkit-box-sizing: border-box;
+			box-sizing: border-box;
+			-webkit-transform: scale(0.5);
+			transform: scale(0.5);
+			-webkit-transform-origin: left top;
+			transform-origin: left top;
+
+			border-radius: 3px;
+		}
+
+		.border-2{
+			border: 0.08em solid orange;
+		}
+
+		.border-3{
+			width: 300px;
+			height: 30px;
+			border-image: url(assets/border_img.png) 1 1 1 1 stretch stretch;
+			border-radius: 5px;
+			border-width: 1px;
+		}
+
+		.border-4{
+			width: 300px;
+			height: 30px;
+			border-image: url(assets/autum.jpeg) 1 1 1 1 stretch stretch;
+			border-radius: 5px;
+			border-width: 1px;
+		}
+
+		.border-5{
+			border-bottom: 1px solid #e0e0e0;
+		}
+
+		.border-6 {
+			border-image: url(assets/dot.png) 0 0 50% 0 stretch;
+			border-width: 1px;
+		}
+
+		.border-7{
+			position: relative;
+		}
+
+		.border-7:after{
+			content: "";
+			position:absolute;
+			bottom:0;
+			width:100%;
+			left:0;
+			height:1px;
+			background:url(assets/dot.png) bottom left repeat-x;
+			background-size: auto 70%;
+		}
+
+		.border-8{
+			-webkit-box-shadow:0 0 1px -0.5px rgba(0, 0, 0, 0.6);
+			border-radius: 3px;
+		}
+
+
+		.border-9{
+			background-image:linear-gradient(180deg, red, red 50%, transparent 50%),
+			linear-gradient(270deg, red, red 50%, transparent 50%),
+			linear-gradient(0deg, red, red 50%, transparent 50%),
+			linear-gradient(90deg, red, red 50%, transparent 50%);
+			background-size: 100% 1px,1px 100% ,100% 1px, 1px 100%;
+			background-repeat: no-repeat;
+			background-position: top, right top,  bottom, left top;
+			padding: 10px;
+
+			border-radius: 3px;
+		}
+	</style>
+</head>
+<body>
+	<div class="border-0">
+		border-0
+	</div>
+
+	<div class="border-1">
+		border-1
+	</div>
+
+	<div class="border-2">
+		border-2
+	</div>
+
+	<div class="border-3">
+		border-3
+	</div>
+
+	<div class="border-4">
+		border-4
+	</div>
+
+	<div class="border-5">
+		border-5
+	</div>
+
+	<div class="border-6">
+		border-6
+	</div>
+
+	<div class="border-7">
+		border-7
+	</div>
+
+	<div class="border-8">
+		border-8
+	</div>
+
+	<div class="border-9">
+		border-9
+	</div>
+
+
+</body>
+</html>

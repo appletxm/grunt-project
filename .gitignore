@@ -1,0 +1,6 @@
+.idea
+.project
+npm-debug.log
+node_modules
+baymax_doctor_frontend.iml
+web

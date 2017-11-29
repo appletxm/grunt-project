@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<title>我要提现</title>
+	<link href="../../styles/base.css" rel="stylesheet" media="all">
+	<link href="../../styles/page-point.css" rel="stylesheet" media="all">
+</head>
+<body>
+	<div class="point-admin">
+		<dl class="high">
+			<dt>可提现积分</dt>
+			<dd><b id="canMentionPoint">0</b>分</dd>
+		</dl>
+
+		<a href="point-list.html">
+			<dl>
+				<dt>帐户总积分 <i class="i-a">查看积分明细</i></dt>
+				<dd><b id="totalPoint">0</b>分</dd>
+			</dl>
+		</a>
+
+		<a href="point-cash-record.html">
+			<dl>
+				<dt>累计提现 <i class="i-a">查看提现记录</i></dt>
+				<dd><b id="grandMention">0</b>分</dd>
+			</dl>
+		</a>
+
+		<p class="tip-show-msg">备注：积分达到2000及以上，且通过身份认证审核，才可以申请提现。</p>
+	</div>
+
+	<footer class="point-admin-footer">
+		<div class="inner"><a class="apply" id="apply">申请提现</a></div>
+	</footer>
+	
+    <script src="../../js/config.js"></script>
+	<script src="../../js/dist/components.min.js"></script>
+	<script src="../../js/dist/point-admin.min.js"></script>
+</body>
+</html>

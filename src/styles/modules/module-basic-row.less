@@ -1,0 +1,48 @@
+.basic-info{
+	dl{
+		display: block;
+		position: relative;
+		min-height: @menuItemHeight;
+		background: @bgWhite;
+		border-bottom: 1px solid @borderGray;
+
+		dt{
+			display: block;
+			position:absolute;
+			top:0;
+			left:0;
+			width:100px;
+			text-indent: 10px;
+			line-height: @menuItemHeight;
+			color: @fontBlack;
+		}
+		dd{
+			display: block;
+			padding: 0 10px 0 110px;
+			line-height: @menuItemHeight;
+			color: @fontLightBlack;
+
+			select{
+				font-size: @font18;
+			}
+		}
+
+		&.des{
+			dt{
+				width:100%;
+				position: static;
+			}
+			
+			dd{
+				line-height: @menuItemHeight - 30px;
+				padding-left: 10px;
+			}
+
+			img{
+				width:15%;
+				margin: 10px; 
+			}
+		}
+
+	}
+}

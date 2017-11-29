@@ -1,0 +1,148 @@
+.radius() {
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+.center() {
+    position: absolute;
+    display: block;
+    width: 220px;
+    height: 265px;
+    top: 40%;
+    left: 50%;
+    margin: -132px -110px;
+}
+
+.icon() {
+    display: inline-block;
+    font: normal normal normal @fa-font-size-base/1 BayMax; // shortening font declaration
+    font-size: inherit; // can't have font-size inherit on line above, so need to override
+    text-rendering: auto; // optimizelegibility throws things off #1094
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0); // ensures no half-pixel rendering in firefox
+}
+
+.after-arrow() {
+    &:after {
+        .icon();
+        content: @fa-var-angle-right;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        font-size: @font14;
+        width: 30px;
+        height: 30px;
+        margin: -15px 0;
+        text-align: center;
+        line-height: 30px;
+        color: @fontArrow;
+    }
+}
+
+.radius50(){
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+
+//基础列表
+.mixin-list(@imgWidth: 46px, @imgHeight: 46px, @ctrlWidth: 22px, @ctrlHeight: 22px) {
+    .cm-list {
+        padding: 0 @list-body-padding;
+        background-color: @bgWhite;
+        .item {
+            position: relative;
+            padding: @list-item-padding 0;
+            min-height: 46px;
+            background: url("images/base/boder-gray.gif") repeat-x left bottom;
+        }
+        .item:last-child {
+            background: none;
+        }
+
+        .header-icon{
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: @imgWidth;
+            height: @imgHeight;
+            margin-top: -@imgWidth/2;
+            -webkit-border-radius: @imgWidth/2;
+
+            img{
+                -webkit-border-radius: @imgWidth/2;
+                position: absolute;
+                top: -1px;
+                bottom: -1px;
+                left: -1px;
+                right: -1px;
+            }
+        }
+
+        /*img {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: @imgWidth;
+            height: @imgHeight;
+            margin-top: -1 * @imgHeight / 2;
+        }*/
+        .ctrl {
+            position: absolute;
+            background-color: @bgOrange;
+            color: @fontWhite;
+            font-size: @font12;
+            text-align: center;
+            top: 50%;
+            right: 0;
+            width: @ctrlWidth;
+            height: @ctrlHeight;
+            line-height: @ctrlHeight;
+            margin-top: -1 * @ctrlHeight / 2;
+        }
+        .ctrl-circle {
+            border-radius: 50%;
+        }
+        .tit {
+            font-size: @font18;
+            color: @fontBlack;
+            font-weight: normal;
+            .text-single-line-ellipsis(38px, 40px);
+        }
+        .desc {
+            color: @fontLightGray;
+            .text-single-line-ellipsis(28px, 16px);
+        }
+    }
+    .cm-list-border-top {
+        padding-top: 1px;
+        background: @bgWhite url("images/base/boder-gray.gif") repeat-x left top;
+    }
+    .cm-list-t-img {
+        .item {
+            padding-left: @imgWidth + 10;
+        }
+    }
+    .cm-list-t-ctrl {
+        .item {
+            padding-right: @ctrlWidth + 10;
+        }
+    }
+    .cm-list-t-img-ctrl {
+        .item {
+            padding-left: @imgWidth + 10;
+            padding-right: @ctrlWidth + 10;
+        }
+    }
+}
+
+//截取文本(仅针对单行)
+.text-single-line-ellipsis(@height, @line-height, @width: auto) {
+    width: @width;
+    height: @height;
+    line-height: @line-height;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<title>input style</title>
+	<style>
+		:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+			color: #f00;  
+		}
+
+		::-moz-placeholder { /* Mozilla Firefox 19+ */
+			color: #f00;
+		}
+
+		input:-ms-input-placeholder,
+		textarea:-ms-input-placeholder {
+			color: #f00;
+		}
+
+		input::-webkit-input-placeholder,
+		textarea::-webkit-input-placeholder {
+			color: #f00;
+		}
+	</style>
+</head>
+<body>
+	<input type="text" placeholder="abcdefghij" />
+	<textarea placeholder="sddkldkldlkd"></textarea>
+</body>
+</html>

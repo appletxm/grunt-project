@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<title>time slide test</title>
+	<style>
+		body{
+			font-family: arial, verdana, sans-serif;
+			margin:0;
+			padding:0;
+		}
+
+		.time-panel{
+			background: #bbb;
+			padding: 50px;
+			font-size: 16px;
+			text-align: center;
+			background: #fff;
+		}
+
+		.slide-panel{
+			width: 100px;
+			margin: 0 auto;
+			height: 150px;
+			overflow:hidden;
+			position: relative;
+		}
+
+		.time-slider-outer{
+			height: 150px;
+			width: 50px;
+			color: #444;
+			overflow: hidden;
+
+			position: relative;
+			float:left;
+		}
+
+		.time-slider-outer ul{
+			display: block;
+			list-style: none;
+			padding:0;
+			margin:0;
+
+			position: absolute;
+			top:0;
+			left:0;
+			width: 100%;
+
+			-webkit-transition: all 0.350s ease-in-out;
+			-webkit-transform: translate3d(0, 0,0);
+			/*-webkit-transform: translateZ(0);*/
+		}
+
+		.time-slider-outer li{
+			display: block;
+			height: 50px;
+			line-height: 50px;
+			text-align: center;
+			padding:0;
+			margin:0;
+		}
+
+		.time-mask-top, .time-mask-foot{
+			height: 50px;
+			background: -webkit-gradient(linear, left top, left bottom, from(rgb(255, 255, 255)), color-stop(0.1, rgba(255, 255, 255, 1)), color-stop(0.7, rgba(255, 255, 255, 0.8)), to(rgba(255, 255, 255, 0.2)));
+			opacity: 1;
+			position: absolute;
+			top:0;
+			left:0;
+			width: 100%;
+			border-bottom: 1px solid deepskyblue;
+		}
+
+		.time-mask-foot{
+			background: -webkit-gradient(linear, left bottom, left top, from(rgb(255, 255, 255)), color-stop(0.1, rgba(255, 255, 255, 1)), color-stop(0.7, rgba(255, 255, 255, 0.8)), to(rgba(255, 255, 255, 0.2)));
+			top: auto;
+			bottom: 0;
+			border-top: 1px solid deepskyblue;
+			border-width: 1px 0 0 0;
+		}
+
+		.slide-gap{
+			position: absolute;
+			top: 0;
+			left: 50px;
+			width:100px;
+			height: 50px;
+		}
+
+		.slide-gap span{
+			display:block;
+			font-size: 24px;
+			line-height: 45px;
+			position: absolute;
+			left: -3px;
+		}
+
+		.slide-gap span:last-child{
+			left: 47px;
+		}
+	</style>
+</head>
+<body>
+<div id="timePanel" class="time-panel">
+	<i id="showTime">00:00</i>
+	<div id="slidePanel" class="slide-panel"></div>
+</div>
+
+<script src="../js/components/TimeSlide.js"></script>
+<script>
+	var timeSlide = new TimeSlide();
+	timeSlide.init({
+		triggerTouchObj: document.querySelector('#slidePanel'),
+		showTimeObj: document.querySelector('#showTime'),
+		width: 50,
+		scrollCell: 50,
+		fastSkip: 3,
+		timeFormat: '8:05:10',
+		timeStep: 5,
+		showTimeSize: 5
+	});
+</script>
+</body>
+</html>

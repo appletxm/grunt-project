@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>下载App</title>
+	<link href="../../styles/base.css" rel="stylesheet" media="all">
+	<link href="../../styles/page-my.css" rel="stylesheet" media="all">
+</head>
+<body>
+	<div class="my-download-app">
+		<a href="http://a.app.qq.com/o/simple.jsp?pkgname=com.qlk.ymz">点击下载app</a>
+		<a class="apple" href="http://a.app.qq.com/o/simple.jsp?pkgname=com.qlk.ymz">点击下载app</a>
+	</div>
+</body>
+
+	<script type="text/javascript">
+		var sUserAgent = navigator.userAgent;
+		var platform = navigator.platform;
+		if(platform.indexOf('iPhone') > -1) {
+			window.location.href = 'http://a.app.qq.com/o/simple.jsp?pkgname=com.qlk.ymz';
+		} else if(platform.indexOf('Linux') > -1){
+			window.location.href = 'http://a.app.qq.com/o/simple.jsp?pkgname=com.qlk.ymz';
+		}
+	</script>
+</html>

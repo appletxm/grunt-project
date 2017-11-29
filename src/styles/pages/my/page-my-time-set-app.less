@@ -1,0 +1,112 @@
+.baiyu-outer{
+	padding: 0 0 50px 0;
+
+	.but{
+		display: block;
+		margin: 10px;
+	}
+}
+
+.baiyu-time{
+	.basic-row{
+		padding: 0 10px;
+		border-bottom: 1px solid @borderGray;
+		height: auto;
+
+		dt{
+			background-color: transparent;
+			color: @borderGray;
+		}
+		dd{
+			color: @fontBlueHigh;
+			min-height: @menuHeight - @msgGap;
+
+			&:before{
+				display:none;
+			}
+
+			span{
+				display: inline-block;
+				padding: 0 10px 0 20px;
+				position: relative;
+
+				&:before{
+
+				}
+			}
+		}
+	}
+}
+
+.baiyu-time-add{
+	.basic-row{
+		dt{
+			width: 90px;
+		}
+		dd{
+			margin-left: 90px;
+			text-align: right;
+			color: @fontLightBlack;
+		}
+	}
+}
+
+.user-time-panel{
+	position: fixed;
+	left:0;
+	top:0;
+	width: 100%;
+	height: 100%;
+	display: none;
+
+	.mask{
+		background: @bgBlack;
+		opacity: 0.5;
+		position: absolute;
+		top:0;
+		left:0;
+		bottom:0;
+		right:0;
+	}
+
+	.content{
+		height: 350px;
+		width: 300px;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin: -175px -150px;
+		background: @bgWhite;
+		text-align: center;
+
+		.close-pop{
+			top: 5px;
+			right: 5px;
+		}
+
+		.time-panel{
+			display: inline-block;
+			margin-right: 20px;
+
+			&:last-child{
+				margin-right: 0;
+			}
+
+			h1{
+				font-size: @font16;
+				line-height: 46px;
+				font-weight: normal;
+				border-bottom: 1px solid @borderGray;
+				padding-top: 5px;
+			}
+
+			input{
+				border:0;
+				font-size: @font16;
+				color: @fontBlueHigh;
+				padding: 5px 10px;
+				background-color: transparent;
+			}
+		}
+	}
+}

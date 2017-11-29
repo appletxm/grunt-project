@@ -1,0 +1,119 @@
+@itemHeight: 100px;
+
+.my-verify-upload{
+
+	padding-bottom: @menuItemHeight + 10px;
+
+	.tip-for-upload{
+		height: @menuItemHeight;
+		line-height: @menuItemHeight;
+		background:@bgWhite;
+		padding: 0 10px;
+		a{
+			line-height: 30px;
+			font-size: @font18;
+			padding:0 20px;
+		}
+	}
+
+	.alert{
+		background:none;
+		border:0;
+		box-shadow: 0 0 0;
+		-webkit-box-shadow: 0 0 0;
+		color: @fontLightBlack;
+
+		&:before{
+			font-size: @font24;
+		}
+
+	}
+
+	.error{
+		margin: 15px;
+	}
+
+	dl{
+		display:block;
+		margin:15px;
+		border: 1px solid @borderGray;
+		background: @bgWhite;
+		position: relative;
+		height: @itemHeight + 20px;
+
+		dt,dd{
+			display: block;
+		}
+
+		dt{
+			padding: 30px 10px 10px 10px;
+			font-size: @font18;
+			margin-right: @menuItemWidth*2;
+			height: @itemHeight - 30px;
+
+			p{
+				font-size: @font16;
+				color: @fontLightBlack;
+			}
+		}
+
+		dd{
+			position: absolute;
+			right:10px; 
+			top:10px;
+			width: @menuItemWidth*2;
+			height: @itemHeight;
+			line-height: @itemHeight;
+			border-left: 1px solid @borderGray;
+			text-align: center;
+
+			a{
+				line-height: 30px;
+
+				&.but-delete-orange{
+					position: absolute;
+					top: -5px ;
+					right: -5px;
+				}
+			}
+
+			span{
+				display:inline-block;
+				position: relative;
+				line-height: 0;
+				overflow:hidden;
+				line-height: @itemHeight;
+
+				input{
+					position: absolute;
+					top: 25px;
+					left:0;
+					height:50px;
+					opacity:0;
+					width: 100px;
+				}
+			}
+
+			b{
+				overflow:hidden;
+				height: @itemHeight;
+				background: transparent url(images/loading.gif) no-repeat center center;
+				background-size: 40% 40%;
+
+				img{
+					vertical-align: middle;
+				}
+			}
+
+		}
+	}
+
+	.status-text{
+		text-indent: 38px;
+		color: @fontLightBlack;
+		b{
+			display: inline;
+			color: @fontBlueHigh;
+		}
+	}
+}

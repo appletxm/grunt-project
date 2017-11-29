@@ -1,0 +1,72 @@
+.my-prescription{
+	padding-top: 15px;
+	h2{
+		font-weight: normal;
+		font-size: @font16;
+		.text-single-line-ellipsis(66px, 66px);
+		margin: -1px 15px 0 15px;
+		position: relative;
+		background: @bgWhite url("images/base/boder-gray.gif") repeat-x left top;
+
+		.text-dot();
+
+		b, i{
+			display: inline;
+		}
+
+		i{
+			margin-left: 35px;
+		}
+
+		.after-arrow();
+
+		&.selected{
+			&:after{
+				-webkit-transform: rotate(90deg);
+			}
+		}
+
+		&:after{
+			right: 0;
+			-webkit-transition: all ease-in-out 0.1s;
+		}
+	}
+
+	.my-favorite-medicine{
+		margin: @msgGap 0;
+		background: @bgWhite;
+
+		h2{
+			border-top: 0;
+		}
+	}
+
+	.my-prescription-list{
+		background: @bgWhite;
+		overflow: hidden;
+
+		.do-save-recommond{
+			margin: 10px 50px;
+			height: 30px;
+			line-height: 30px;
+			font-size: @font16;
+		}
+
+	}
+
+	.no-data-tip{
+		background: @bgGray;
+		&:after{
+			content: "无处方单信息"
+		}
+		z-index: 20;
+	}
+
+	.tip-show-msg{
+		position: fixed;
+		top:0;
+		left:0;
+		width: 100%;
+		z-index: 21;
+	}
+}

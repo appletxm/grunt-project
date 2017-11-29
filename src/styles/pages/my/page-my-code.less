@@ -1,0 +1,125 @@
+.my-code{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin: -215px -50%;
+	width: 100%;
+	height: 450px;
+	overflow: hidden;
+
+	&.slide-pic{
+		.dot{
+			bottom: 0;
+			li{
+				background:@bgBlue;
+				opacity: 0.3;
+				&.selected{
+					background:@bgBlue;
+					opacity: 1;
+				}
+			}
+		}
+	}
+
+	.code-panel{
+		background: @bgWhite;
+		text-align: center;
+		position: absolute;
+		top:0;
+		left:50%;
+		margin: 0 -150px;
+		width: 300PX;
+		height: 410px;
+		z-index: 1;
+
+		h2{
+			text-align: center;
+			font-weight: normal;
+			color: @fontWhite;
+			font-size: @font16;
+			height: @menuItemWidth;
+			line-height: @menuItemWidth;
+			background: url(images/top_blue.png) repeat-x 0 -50px;
+		}
+
+		&.doctor-code-panel{
+			left:150%;
+
+			h2{
+				background-image:url(images/top_orange.png);
+			}
+		}
+
+		&.animate{
+			-webkit-transition: all 0.3s ease-in-out;
+			z-index: 2;
+		}
+	}
+
+	.tab-con{
+		text-align: center;
+		margin-top: 15px;
+		padding-top: 15px;
+		background: @bgWhite url("images/base/boder-gray.gif") repeat-x left top;
+	}
+
+	img{
+		margin:0 auto 0 auto;
+		width: 180px;
+		height: 180px;
+	}
+
+	.doctor-info{
+		margin: 20px 20px 0 20px;
+		display: block;
+		text-align: left;
+		position: relative;
+		padding: 0 10px 0 90px;
+		font-size: @font14;
+
+		img{
+			position: absolute;
+			top: 0;
+			left: 10px;
+			width: 70px;
+			height: 70px;
+			margin: 0;
+		}
+
+		h1{
+			font-size: @font16;
+			font-weight: normal;
+			.text-single-line-ellipsis(22px, 22px);
+		}
+
+		span{
+			display: inline-block;
+			margin: 2px 5px 8px 0;
+			padding: 0 5px 0 0;
+			border-right:1px solid @borderGray;
+			margin-right: 5px;
+			height: 20px;
+			line-height: 20px;
+		}
+
+		span[for="qrLevel"]{
+			border:0;
+			color: @fontLightBlack;
+		}
+
+		i{
+			color: @fontLightBlack;
+			height: 20px;
+			line-height: 20px;
+			display: block;
+		}
+
+
+	}
+}
+
+.no-code{
+	&:after{	
+		content: "您还末通过认证，还末能取得二维码。" !important;
+	}
+}

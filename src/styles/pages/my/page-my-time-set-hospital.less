@@ -1,0 +1,258 @@
+.hospital-time{
+	background: @bgWhite;
+	padding: 10px;
+
+	.basic-row{
+		padding:0;
+		position: relative;
+		height:@menuHeight - @msgGap;
+		line-height:@menuHeight - @msgGap;
+		border-bottom: 0;
+		margin:1px 0 0 1px;
+
+		dt{
+			position: absolute;
+			top:0;
+			left: 0;
+			height:@menuHeight - @msgGap;
+			width: 70px;
+			-webkit-border-radius: 5px 0 0 5px;
+			background: #54adfa;
+			color: @fontWhite;
+			text-align: center;
+		}
+		dd{
+			margin: 0 0 0 71px;
+			box-sizing: border-box;
+			position:relative;
+
+			i{
+				width:33.33%;
+				height: @menuHeight - @msgGap;
+				text-align: center;
+				display: block;
+				position: absolute;
+				left:0;
+				top:0;
+
+				&:nth-child(2){
+					left: 33.33%;
+				}
+
+				&:last-child{
+					left: 66.66%;
+
+					&:before{
+						-webkit-border-radius: 0 5px 5px 0;
+					}
+				}
+
+				&:before{
+					content:"";
+					color: @fontWhite;
+					background: #54adfa;
+					position: absolute;
+					top:0;
+					left:0;
+					right: 1px;
+					bottom:0;
+				}
+
+				&:after{
+					.icon();
+					width: 20px;
+					height: 20px;
+					content: @fa-var-check;
+					color: #68afed;
+					line-height: 20px;
+					font-size: @font20;
+					position: relative;
+					z-index: 5;
+				}
+
+				&.selected{
+					&:before{
+						background: #2b98f6;
+					}
+					&:after{
+						content: @fa-var-check;
+						color: @fontWhite;
+						font-size: @font20;
+					}
+				}
+			}
+		}
+	}
+
+	.basic-row:first-child{
+		dt{
+			-webkit-border-radius: 5px 5px 0 5px;
+		}
+		i:last-child{
+			-webkit-border-radius: 5px 5px 5px 0;
+		}
+	}
+
+	.header{
+		height: @menuHeight / 2;
+		line-height: @menuHeight / 2;
+		padding: 0;
+		dt{
+			height: @menuHeight / 2;
+			background: #1f83d8;
+		}
+		dd{
+			i{
+				height: @menuHeight / 2;
+
+				&:before{
+					background: #1f83d8;
+					-webkit-border-radius: 5px 5px 0 0;
+				}
+
+				&:after{
+					display:none;
+				}
+
+				&:first-child{
+					&:before{
+						content: "上午";
+					}
+				}
+
+				&:nth-child(2){
+					&:before{
+						content: "下午";
+					}
+				}
+
+				&:last-child{
+					&:before{
+						content: "晚上";
+					}
+				}
+
+				&:last-child{
+					&:before{
+						-webkit-border-radius: 5px 5px 5px 0;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+/*
+.baiyu-outer{
+	padding: 0 0 50px 0;
+
+	.but{
+		display: block;
+		margin: 10px;
+	}
+}
+
+.baiyu-time{
+	.basic-row{
+		padding: 0 10px;
+		border-bottom: 1px solid @borderGray;
+		height: auto;
+
+		dt{
+			background-color: transparent;
+			color: @fontLightDark;
+		}
+		dd{
+			color: @fontBlueHigh;
+			min-height: @menuHeight - @msgGap;
+
+			&:before{
+				display:none;
+			}
+
+			span{
+				display: inline-block;
+				padding: 0 10px 0 20px;
+				position: relative;
+
+				&:before{
+
+				}
+			}
+		}
+	}
+}
+
+.baiyu-time-add{
+	.basic-row{
+		dt{
+			width: 90px;
+		}
+		dd{
+			margin-left: 90px;
+			text-align: right;
+			color: @fontLightBlack;
+		}
+	}
+}
+
+.user-time-panel{
+	position: fixed;
+	left:0;
+	top:0;
+	width: 100%;
+	height: 100%;
+	display: none;
+
+	.mask{
+		background: @bgBlack;
+		opacity: 0.5;
+		position: absolute;
+		top:0;
+		left:0;
+		bottom:0;
+		right:0;
+	}
+
+	.content{
+		height: 350px;
+		width: 300px;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin: -175px -150px;
+		background: @bgWhite;
+		text-align: center;
+
+		.close-pop{
+			top: 5px;
+			right: 5px;
+		}
+
+		.time-panel{
+			display: inline-block;
+			margin-right: 20px;
+
+			&:last-child{
+				margin-right: 0;
+			}
+
+			h1{
+				font-size: @font16;
+				line-height: 46px;
+				font-weight: normal;
+				border-bottom: 1px solid @borderGray;
+				padding-top: 5px;
+			}
+
+			input{
+				border:0;
+				font-size: @font16;
+				color: @fontBlueHigh;
+				padding: 5px 10px;
+				background-color: transparent;
+			}
+		}
+	}
+}*/

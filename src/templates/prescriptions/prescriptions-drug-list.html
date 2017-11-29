@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<meta content="telephone=no" name="format-detection">
+	<title>药品列表</title>
+    <link href="../../styles/base.css" rel="stylesheet" media="all">
+	<link href="../../styles/page-prescriptions.css" rel="stylesheet" media="all">
+</head>
+<body>
+	<section class="prescriptions-drug-list" id="prescriptions-drug-list">
+		<h6>名称</h6>
+		<div class="pres-title" id="rename-box">
+			<input type="text" maxlength="10" size="10" value="">
+		</div>
+
+		<h6>所属药品</h6>
+		<ul></ul>
+	</section>
+
+	<footer class="x2 coustom-btn-group btn-group">
+		<a class="del" id="del" href="javascript:void(0);">删除</a>
+		<a class="add" id="add" href="javascript:void(0);">添加药品</a>
+	</footer>
+
+	<footer class="coustom-btn-group btn-group" style="display:none;">
+        <a class="save" id="save" href="javascript:void(0);">保存</a>
+    </footer>
+
+	<script src="../../js/config.js"></script>
+    <script src="../../js/dist/components.min.js"></script>
+    <script src="../../js/dist/prescriptions-drug-list.min.js"></script>
+</body>
+</html>

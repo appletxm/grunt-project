@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>audio new</title>
+	<!--<link href="../../styles/global.css" rel="stylesheet" media="all">-->
+</head>
+<body>
+	<input type="file" accept="video/*;capture=camcorder">
+	<input type="file" accept="audio/*;capture=microphone">
+
+	<device type="media" onchange="update(this.data)"></device>
+	<video autoplay></video>
+
+
+	<video autoplay></video>
+
+	<script>
+		function update(stream) {
+			document.querySelector('video').src = stream.url;
+		}
+	</script>
+
+	<script>
+		window.URL = window.URL || window.webkitURL;
+		navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
+		var video = document.getElementById('video');
+		if (navigator.getUserMedia) {
+			navigator.getUserMedia({audio: true, video: true}, function(stream) {
+				video.src = window.URL.createObjectURL(stream);
+			}, onFailSoHard);
+		}
+		else {
+			alert('您的浏览器不支持getUserMedia方法');
+		}
+
+		function onFailSoHard() {
+			alert('设备拒绝访问');
+		}
+	</script>
+	
+</body>
+</html>

@@ -1,0 +1,27 @@
+.error-panel{
+	width: 80%;
+	min-height: 120px;
+
+	position: absolute;
+	top:50%;
+	left: 50%;
+	margin: -60px -40%;
+	background:@bgWhite;
+	.radius();
+
+	.error-text{
+		margin: 10px;
+		background:transparent url(../images/dor_header.png) no-repeat top left;
+		background-size: auto 60px;
+		-webkit-background-clip: padding-box;
+		padding-left: 65px;
+		font-size: @font14;
+		color: @fontLightGray;
+		line-height: 20px;
+
+		b{
+			font-size: @font16;
+			color: @borderGray;
+		}
+	}
+}

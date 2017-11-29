@@ -1,0 +1,135 @@
+@itemHeight: 100px;
+
+.my-verify-upload{
+
+	padding-bottom: @menuItemHeight + 10px;
+
+	.tip-for-upload{
+		height: @menuItemHeight;
+		line-height: @menuItemHeight;
+		background:@bgWhite;
+		padding: 0 10px;
+		a{
+			line-height: 30px;
+			padding:0 20px;
+		}
+	}
+
+	.tip-msg-fixed{
+		margin-top: 20px;
+		padding: 0 15px;
+		line-height: 30px;
+		font-size: @font14;
+		position: relative;
+		text-indent: 13px;
+
+		&:before{
+			display: inline;
+			font-size: @font14;
+		}
+	}
+
+	.alert{
+		background:none;
+		border:0;
+		box-shadow: 0 0 0;
+		-webkit-box-shadow: 0 0 0;
+		color: @fontLightBlack;
+
+		&:before{
+			font-size: @font24;
+		}
+
+	}
+
+	.error{
+		margin: 15px;
+	}
+
+	dl{
+		display:block;
+		margin:15px;
+		border: 1px solid @borderGray;
+		background: @bgWhite;
+		position: relative;
+		height: @itemHeight + 20px;
+
+		dt,dd{
+			display: block;
+		}
+
+		dt{
+			padding: 35px 20px 10px 20px;
+			font-size: @font18;
+			margin-right: 120px;
+			height: @itemHeight - 30px;
+
+			p{
+				font-size: @font16;
+				color: @fontGray;
+			}
+		}
+
+		dd{
+			position: absolute;
+			right:0;
+			top:0;
+			width: @menuItemWidth * 2;
+			height: @itemHeight;
+			line-height: @itemHeight;
+			background: @bgWhite url("images/base/boder-gray.gif") repeat-y left top;
+			padding: 10px;
+			text-align: center;
+
+			a{
+				line-height: 30px;
+
+				&.but-delete-orange{
+					position: absolute;
+					top: 3px ;
+					right: 3px;
+				}
+			}
+
+			span{
+				display:inline-block;
+				position: relative;
+				line-height: 0;
+				overflow:hidden;
+				line-height: @itemHeight;
+
+				input{
+					position: absolute;
+					top: 25px;
+					left:0;
+					height:50px;
+					opacity:0;
+					width: 100px;
+				}
+			}
+
+			b{
+				overflow:hidden;
+				height: @itemHeight;
+				background: transparent url(images/loading.gif) no-repeat center center;
+				background-size: 30% 30%;
+
+				img{
+					vertical-align: middle;
+				}
+			}
+
+		}
+	}
+
+	.status-text{
+		margin-top: 5px;
+		text-indent: 28px;
+		color: @fontGray;
+		b{
+			display: inline;
+			color: @fontBlueHigh;
+		}
+	}
+
+}

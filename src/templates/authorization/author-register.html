@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>注册</title>
+	<link href="../../styles/base.css" rel="stylesheet" media="all">
+	<link href="../../styles/page-author.css" rel="stylesheet" media="all">
+</head>
+<body>
+
+	<div class="author-register form-input" id="authorRegisterPanel">
+		<div class="form-input-row">
+			<input id="realName" size="15" maxlength="15" type="text" placeholder="姓名" />
+		</div>
+
+		<span class="validatePanel">
+			<div class="form-input-row">
+				<input id="phoneNo" type="tel" size="11" maxlength="11" placeholder="手机号" />
+			</div>
+		</span>
+
+		<span class="validatePanel">
+			<div class="form-input-row">
+				<input id="password" type="password" size="16" maxlength="16" placeholder="密码" />
+			</div>
+		</span>
+
+		<span class="validatePanel">
+			<div class="form-input-row">
+				<input id="confirmPass" type="password" size="16" maxlength="16" placeholder="再次确认密码" />
+			</div>
+		</span>
+
+		<span class="validatePanel">
+			<div class="form-input-row">
+				<input id="validateCode" type="tel" size="4" maxlength="4" placeholder="验证码" />
+			</div>
+			<a id="getValidateCode">获取验证码</a>
+		</span>
+
+		<span id="chooseUserType" class="checked-outer">
+			<b></b>我已阅读并接受<a id="checkDorContract">《医生注册协议》</a>
+		</span>
+
+		<footer class="no-need-fixed">
+			<a class="save" id="doRegister">注 册</a>
+		</footer>
+	</div>
+
+    <script src="../../js/config.js"></script>
+	<script src="../../js/dist/components.min.js"></script>
+	<script src="../../js/dist/author-register.min.js"></script>
+</body>
+</html>

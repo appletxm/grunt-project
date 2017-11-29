@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<title>get user media</title>
+</head>
+<body>
+	<canvas id="canvas" width="320" height="240"></canvas>
+	<video id="video" width="320" height="240"></video>
+	<input type="button" id="doSnap" value="snap"/>
+
+	<script>
+		var canvas,video, context;
+		// 设置事件监听器
+		window.addEventListener("DOMContentLoaded", function() {
+			// 获取元素
+			var videoObj = { "video": true },
+				errBack = function(error) {
+					console.log("Video capture error: ", error.code);
+				};
+
+			video = document.getElementById("video");
+			canvas = document.getElementById("canvas");
+			context = canvas.getContext("2d");
+
+			// 设置video监听器
+			if(navigator.getUserMedia) { // Standard
+				navigator.getUserMedia(videoObj, function(stream) {
+					video.src = stream;
+					video.play();
+				}, errBack);
+			} else if(navigator.webkitGetUserMedia) { // WebKit-prefixed
+				navigator.webkitGetUserMedia(videoObj, function(stream){
+					video.src = window.webkitURL.createObjectURL(stream);
+					video.play();
+				}, errBack);
+			}
+		}, false);
+
+		document.querySelector('#doSnap').addEventListener("click", function() {
+			context.drawImage(video, 0, 0, 320, 240);
+		}, false);
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<meta content="telephone=no" name="format-detection">
+	<title>pop test</title>
+	<link href="../styles/base.css" rel="stylesheet" media="all">
+	<style>
+		body {
+			background: white;
+		}
+
+		.audio {
+			width: 20px;
+			height: 20px;
+			position: relative;
+			border-radius: 10px;
+		}
+
+		.audio:before {
+			display: block;
+			width: 16px;
+			height: 16px;
+			position: absolute;
+			top: 2px;
+			left: -2px;
+			content: '\e90a';
+			font-size: 16px;
+		}
+
+		.playing {
+			-webkit-border-radius: 10px;
+		}
+
+		.playing .mask {
+			-webkit-animation: playing 0.5s ease-in infinite;
+		}
+
+		.stop .mask {
+			display: none;
+		}
+
+		.audio-patient {
+			-webkit-transform: rotate(180deg);
+		}
+
+		.mask {
+			display: block;
+			position: absolute;
+
+			width: 6px;
+			height: 6px;
+			border: 10px solid white;
+			border-radius: 13px;
+			top: -3px;
+			left: -2.8px;
+		}
+
+		.mask-0 {
+			width: 6px;
+			height: 6px;
+			border: 10px solid white;
+			border-radius: 13px;
+			top: -3px;
+			left: -2.8px;
+		}
+
+		.mask-1 {
+			width: 14px;
+			height: 14px;
+
+			border: 6px solid white;
+			border-radius: 13px;
+
+			top: -3px;
+			left: -3px;
+		}
+
+		.mask-2 {
+			width: 22px;
+			height: 22px;
+
+			border: 4px solid white;
+			border-radius: 15px;
+
+			top: -5px;
+			left: -5px;
+		}
+
+		@-webkit-keyframes playing {
+			from {
+				width: 6px;
+				height: 6px;
+				border: 10px solid white;
+				border-radius: 13px;
+				top: -3px;
+				left: -2.8px;
+			}
+
+			to {
+				width: 14px;
+				height: 14px;
+
+				border: 6px solid white;
+				border-radius: 13px;
+
+				top: -3px;
+				left: -3px;
+			}
+
+			to {
+				width: 22px;
+				height: 22px;
+
+				border: 4px solid white;
+				border-radius: 15px;
+
+				top: -5px;
+				left: -5px;
+			}
+
+		}
+	</style>
+</head>
+<body>
+
+<div id="audioControl" class="audio fa playing audio-patient">
+	<span class="mask"></span>
+</div>
+
+<script src="../js/dist/components.min.js"></script>
+
+<script>
+	var messageBox = new MessageBox();
+	var pop = {
+		messageBox: messageBox,
+		showLoading: function () {
+			this.messageBox.show({
+				msg: '<span class="fa fa-spinner fa-pulse fa-2x fa-fw"></span>',
+				type: 'loading',
+				autoClose: false
+			});
+		},
+
+		showAlert: function (msg) {
+			this.messageBox.show({
+				msg: msg,
+				type: 'alert',
+				autoClose: false
+			});
+		},
+
+		hideLoading: function () {
+			this.messageBox.hide();
+		}
+	};
+
+
+	function testShow() {
+		pop.showLoading();
+		setTimeout(function () {
+
+			this.hideLoading();
+
+			this.showAlert('只是弹出框的测试');
+
+			 setTimeout(function(){
+			 this.hideLoading();
+			 }.bind(this), 2000);
+		}.bind(pop), 5000);
+	}
+
+	testShow();
+
+	setTimeout(function () {
+		testShow();
+	 }, 8000);
+
+	var audio = document.querySelector('#audioControl');
+	audio.onclick = function (event) {
+		var target = event.currentTarget;
+		var className = target.className;
+
+		if (className.indexOf('playing') >= 0) {
+			target.className = 'audio fa stop audio-patient';
+		} else {
+			target.className = 'audio fa playing audio-patient';
+		}
+
+	};
+
+</script>
+
+</body>
+</html>

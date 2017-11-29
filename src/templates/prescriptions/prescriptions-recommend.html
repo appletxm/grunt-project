@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no">
+	<meta content="telephone=no" name="format-detection">
+	<title>推荐处方单</title>
+    <link href="../../styles/base.css" rel="stylesheet" media="all">
+	<link href="../../styles/page-prescriptions.css" rel="stylesheet" media="all">
+</head>
+<body>
+<div class="medical-main">
+
+	<div class="my-prescription" id="prescriptionScroll">
+		<div id="myPrescriptionList" class="my-prescription-list"></div>
+	</div>
+
+	<p id="chooseTipMsg" class="tip-show-msg" style="display: none;">处方单只可单选推荐，不可以多选</p>
+</div>
+
+<div class="recommond-tip-panel">
+	<span>已经选择<b id="recommandNumber">0</b>个药物</span>
+	<a id="recommandMedical" class="recommand-but">推荐处方</a>
+</div>
+
+<script src="../../js/config.js"></script>
+<script src="../../js/dist/components.min.js"></script>
+<script src="../../js/dist/prescriptions-recommend.min.js"></script>
+</body>
+</html>

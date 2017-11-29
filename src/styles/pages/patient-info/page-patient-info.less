@@ -1,0 +1,97 @@
+section{
+    padding: 0 10px;
+    background: @bgWhite;
+    margin-bottom: 15px;
+
+    a{
+        display: block;
+        color: @fontBlack;
+        overflow: hidden;
+    }
+
+    ul li{
+        position: relative;
+        height: @menuHeight;
+        line-height: @menuHeight;
+        list-style: none;
+        overflow: hidden;
+        border-bottom: 1px solid @borderGray;
+        font-size: @font16;
+        .after-arrow();
+
+        &:last-child{
+            border-bottom: 0;
+        }
+
+        span{
+            float: left;
+        }
+
+        em{
+            color: @fontGray;
+            float: right;
+            margin-right: 20px;
+
+            &.animate-check{
+                right: 0;
+            }
+        }
+
+        &:after{
+            right: -5px;
+        }
+    }
+}
+section.lc{
+    margin-bottom: 65px;
+}
+
+.patient-base-info{
+    position: relative;
+    padding: 10px;
+	.patient-photo{
+		position: absolute;
+        left: 10px;
+        top: 10px;
+        width: 60px;
+        height: 60px;
+        border: 2px solid #fff;
+        font-size: 0;
+        overflow: hidden;
+        box-shadow: 0 0 2px #999999;
+        .radius50();
+
+        img{
+            width: 60px;
+            height: 60px;
+        }
+	}
+
+    p{
+        min-height: 64px;
+        margin-left: 75px;
+        .after-arrow();
+
+        &:after{
+            right: 5px;
+        }
+
+        span{
+            display: block;
+            font-size: @font16;
+            .text-single-line-ellipsis(36px, 36px);
+        }
+
+        samll{
+            display: block;
+            font-size: @font14;
+            color: @fontLightGray;
+            .text-single-line-ellipsis(28px, 28px);
+        }
+    }
+}
+
+.no-after-arrow:after{
+    width: 0;
+    height: 0;
+}

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<title>put form</title>
+	<!--<link href="../../styles/global.css" rel="stylesheet" media="all">-->
+	<style>
+		*{
+			margin:0;
+		}
+		body{
+			padding: 10px;
+		}
+
+		p{
+			margin-top: 10px;
+		}
+	</style>
+</head>
+<body>
+<!--<form action="#" method="get">
+	<fieldset>
+		<input type="search" id="search"><label for="search">Search</label>
+	</fieldset>
+	<fieldset>
+		<input type="submit" value="kettle">
+	</fieldset>
+</form>-->
+
+	<p>normal file</p>
+	<form>
+	<input type="file" value="" />
+	</form>
+
+	<p>camera file</p>
+	<form>
+		<input type="file" value="" accept="image/*" capture="camera" />
+	</form>
+
+	<p>email</p>
+	<form>
+	<input type="email" value="" required />
+	</form>
+
+	<p>url</p>
+	<form>
+	<input type="url" value="" required />
+	</form>
+
+	<p>phone</p>
+<form>
+	<input type="tel" value="" name="phone" required />
+</form>
+
+	<p>number</p>
+<form>
+	<input type="number" value="" name="points" min="1" max="10" stype="3" required />
+</form>
+
+	<p>range</p>
+<form>
+	<input type="range" name="points" min="1" max="10" stype="2" />
+</form>
+
+	<p>search</p>
+	<form>
+	<input type="search" value="" required />
+	<!--Search: <input type="search" name="user_search"  placeholder="free key" >-->
+	</form>
+
+	<p>color</p>
+	<form>
+		<input type="color" value="" required />
+	</form>
+
+	<p>date</p>
+	<form>
+		<input type="date" value="" required />
+	</form>
+
+<p>tel</p>
+<form>
+	<input type="tel" value="" required />
+</form>
+
+
+	<p>date month</p>
+	<form>
+		<input type="month" value="" required />
+	</form>
+
+	<p>date week</p>
+	<form>
+		<input type="week" value="" required />
+	</form>
+
+	<p>date time</p>
+	<form>
+		<input type="time" value="" required />
+	</form>
+
+	<p>date datetime</p>
+	<form>
+		<input type="datetime" value="" required />
+	</form>
+
+	<p>date datetime-local</p>
+	<form>
+		<input type="datetime-local" value="" required />
+	</form>
+
+	<div><form action="post" method="post"><textarea placeholder="点击+号 推荐用药" id="msgText"></textarea></form></div>
+
+	<div><form><input type="text" placeholder="点击+号 推荐用药"></form></div>
+
+<form>
+	<div contenteditable>13123213242342</div>
+</form>
+
+	<p>
+	Webpage: <input type="url" list="url_list" name="link" />
+		<datalist id="url_list">
+			<option label="W3School" value="http://www.W3School.com.cn" />
+			<option label="Google" value="http://www.google.com" />
+			<option label="Microsoft" value="http://www.microsoft.com" />
+		</datalist>
+
+		<form action="demo_form.asp" method="get">
+			Username: <input type="text" name="usr_name" />
+			Encryption: <keygen name="security" />
+			<input type="submit" />
+		</form>
+
+		<output id="result" onforminput="resCalc()"></output>
+	</p>
+
+	<script>
+		document.title = 'abc form';
+	</script>
+</body>
+</html>

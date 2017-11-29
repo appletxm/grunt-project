@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<title>新增银行卡</title>
+	<link href="../../styles/base.css" rel="stylesheet" media="all">
+	<link href="../../styles/page-point.css" rel="stylesheet" media="all">
+</head>
+<body>
+	<div class="my-card">
+		<dl class="form-input-row">
+			<dt>持卡人</dt>
+			<dd><input id="useName" type="text" readonly value="" placeholder="持卡人姓名" /></dd>
+		</dl>
+
+		<dl class="form-input-row" id="chooseBank">
+			<dt>银行</dt>
+			<dd class="need-skip" id="bank">选择银行</dd>
+		</dl>
+
+		<dl class="form-input-row">
+			<dt>卡号</dt>
+			<dd><input id="cardNo" type="text" value="" placeholder="请输入卡号" /></dd>
+		</dl>
+
+		<dl class="form-input-row">
+			<dt>开户行</dt>
+			<dd><input id="branch" type="text" value="" placeholder="请填写开户行" /></dd>
+		</dl>
+
+		<i class="tip-show-msg">
+			1. 开户行信息需填写省、市，如<span class="blue">广州省广州支行</span>；
+			<p class="top-gap">
+				2. 如不知道自己的开户行信息，可拨打银行相应的客服电话，转人工查询，如<span class="blue">招商银行，可拨打95555，输入2进行查询</span>。
+			</p>
+		</i>
+	</div>
+
+	<footer>
+		<a class="save" id="addNewCard">确 认</a>
+	</footer>
+
+    <script src="../../js/config.js"></script>
+	<script src="../../js/dist/components.min.js"></script>
+	<script src="../../js/dist/point-card-add-card.min.js"></script>
+</body>
+</html>

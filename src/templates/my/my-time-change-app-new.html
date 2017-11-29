@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<title>新增大白云诊时间</title>
+	<link href="../../styles/global.css" rel="stylesheet" media="all">
+</head>
+<body>
+	<div id="baiyuTime" class="hospital-time baiyu-time baiyu-time-add">
+		<dl for="week" class="basic-row">
+			<dt>选择日期</dt>
+			<dd id="weekText">选择</dd>
+		</dl>
+
+		<dl for="time" class="basic-row">
+			<dt>选择时间</dt>
+			<dd id="timeText">选择</dd>
+		</dl>
+	</div>
+
+	<footer>
+		<a class="save" id="saveTime">保存</a>
+	</footer>
+
+	<div id="userTimePanel" class="user-time-panel">
+		<div class="mask"></div>
+		<div class="content">
+			<a class="close-pop"></a>
+			<div id="startTime" class="time-panel">
+				<h1>开始时间</h1>
+				<div class="slide-panel"></div>
+				<input id="resetTime" type="button" value="重置" />
+			</div>
+			<div id="endTime" class="time-panel">
+				<h1>结束时间</h1>
+				<div class="slide-panel"></div>
+				<input id="keepTime" type="button" value="确定" />
+			</div>
+		</div>
+		<div class="footer"></div>
+	</div>
+
+
+	<script src="../../js/config.js"></script>
+	<script src="../../js/dist/components.min.js"></script>
+	<script src="../../js/dist/my-time-change-app-add.min.js"></script>
+</body>
+</html>

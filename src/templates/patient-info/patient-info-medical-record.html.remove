@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<title>案档详情</title>
+	<link href="../../styles/base.css" rel="stylesheet" media="all">
+	<link href="../../styles/page-patient.css" rel="stylesheet" media="all">
+</head>
+<body>
+	
+	<div class="patient-info">
+		<div class="basic-info">
+			<dl class="des">
+				<dt>病情描述</dt>
+				<dd>左胸和胸上面时常疼痛,持续时间大约在20分钟左右.疼痛时会感觉很闷,有压迫感.上楼时和大量劳动后会有明显疼痛.一般在大量体力劳动后或者是上楼的时候以及晚上睡前.具体元原因不是很清楚,以前得过胆结石,身体一直不好,还有可能是焦虑过度</dd>
+			</dl>
+			<dl>
+				<dt>就诊时间</dt>
+				<dd>2015-07-07</dd>
+			</dl> 
+			<dl>
+				<dt>就诊医院</dt>
+				<dd>广东省人民医院</dd>
+			</dl>
+			<dl>
+				<dt>就诊科室</dt>
+				<dd>心内科</dd>
+			</dl>
+			<dl>
+				<dt>医生</dt>
+				<dd>张三丰</dd>
+			</dl>
+			<dl class="des">
+				<dt>医嘱</dt>
+				<dd>
+					<a href="../../styles/images/ad_2.png"><img src="../../styles/images/ad_2.png" /></a>
+					<img src="../../styles/images/ad_2.png" />
+					<img src="../../styles/images/ad_2.png" />
+					<img src="../../styles/images/ad_2.png" />
+				</dd>
+			</dl>
+			<dl class="des">
+				<dt>处方单</dt>
+				<dd>
+					<img src="../../styles/images/ad_2.png" />
+					<img src="../../styles/images/ad_2.png" />
+					<img src="../../styles/images/ad_2.png" />
+					<img src="../../styles/images/ad_2.png" />
+				</dd>
+			</dl>
+			<dl class="des">
+				<dt>检验单</dt>
+				<dd>
+					<img src="../../styles/images/ad_2.png" />
+					<img src="../../styles/images/ad_2.png" />
+					<img src="../../styles/images/ad_2.png" />
+					<img src="../../styles/images/ad_2.png" />
+				</dd>
+			</dl>
+		</div>
+	</diV>
+
+	<script src="../../js/config.js"></script>
+	<script src="../../js/dist/Compatible.min.js"></script>
+	<script src="../../js/dist/Ajax.min.js"></script>
+	<script src="../../js/dist/MessageBox.min.js"></script>
+	
+</body>
+</html>

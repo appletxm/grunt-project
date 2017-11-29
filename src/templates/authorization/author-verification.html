@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<title>身份认证</title>
+	<link href="../../styles/base.css" rel="stylesheet" media="all">
+	<link href="../../styles/page-author.css" rel="stylesheet" media="all">
+</head>
+<body>
+	<div class="my-verify-upload">
+		<p class="tip-for-upload" style="display:none;">
+			请先补充完个人资料再上传认证信息 <a href="../my/my-information.html" class="but but-only-border">确定</a>
+		</p>
+
+		<p class="tip-msg-fixed" style="display:none;">证书照片仅用作认证，不会向用户展示</p>
+		<p class="status-text" id="authorStatusText" style="display:none;"></p>
+
+		<div class="upload-image" id="uploadImagePanel" style="display:none;">
+			<dl>
+				<dt>
+					个人照片
+					<p>请上传清晰的免冠证件照</p>
+				</dt>
+				<dd></dd>
+			</dl>
+			<dl>
+				<dt>
+					工作证
+					<p>请上传清晰的工作证</p>
+				</dt>
+				<dd></dd>
+			</dl>
+			<dl>
+				<dt>
+					执业资格证
+					<p>请上传清晰的证件照</p>
+				</dt>
+				<dd></dd>
+			</dl>
+		</div>
+
+	</div>
+
+	<footer>
+		<a class="save" id="saveVerityImages" style="display:none;">提交认证</a>
+	</footer>
+
+	<div id="preLoadImageDiv" style="display:none;"></div>
+
+	<script src="../../js/config.js"></script>
+	<script src="../../js/dist/components.min.js"></script>
+	<script src="../../js/dist/author-verification.min.js"></script>
+</body>
+</html>

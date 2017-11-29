@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta content="telephone=no" name="format-detection">
+    <title>我的处方单</title>
+    <link href="../../styles/base.css" rel="stylesheet" media="all">
+    <link href="../../styles/page-prescriptions.css" rel="stylesheet" media="all">
+</head>
+
+<body>
+    <section class="prescriptions-list-box">
+        <nav class="form-list" id="prescriptions-list">
+        	<ul>
+        		<li><a href="prescriptions-drug-list.html?flag=0">常用药</a></li>
+        	</ul>
+        </nav>
+
+        <footer class="x2 coustom-btn-group btn-group">
+            <a class="del" id="del" href="javascript:void(0);">删除</a>
+	        <a class="add" id="add" href="prescriptions-list-add.html">添加处方单</a>
+        </footer>
+
+        <footer class="coustom-btn-group btn-group" style="display:none;">
+            <a class="save" id="save" href="javascript:void(0);">保存</a>
+        </footer>
+    </section>
+
+    <script src="../../js/config.js"></script>
+    <script src="../../js/dist/Compatible.min.js"></script>
+    <script src="../../js/dist/Ajax.min.js"></script>
+    <script src="../../js/dist/MessageBox.min.js"></script>
+    <script src="../../js/dist/prescriptions-list.min.js"></script>
+</body>
+
+</html>

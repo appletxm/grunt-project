@@ -1,0 +1,125 @@
+.tab{
+	position: fixed;
+	width: 100%;
+	top: 0;
+	z-index: 10;
+}
+.patient-admin{
+	padding-top: @tabHeight;
+	.mixin-list();
+
+	.cm-list{
+		padding:0;
+
+		.header-icon{
+			left: 10px;
+		}
+
+		&.cm-list-t-img-ctrl{
+			li{
+				padding: 0 42px 0 66px;
+
+				.ctrl-circle{
+					margin-top: -5px;
+					right: 10px;
+				}
+
+				&.top-message{
+					background-color: @bgLightGray;
+				}
+			}
+		}
+
+		.tit{
+			padding-right: 120px;
+		}
+
+		.date{
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			font-size: @font12;
+			color: @fontLightGray;
+		}
+
+	}
+
+	.cm-list-t-img {
+		.item{
+			padding: 0 0 0 66px;
+		}
+	}
+
+	.list-content{
+		position: fixed;
+		top: 115px;
+		left:0;
+		right:0;
+		bottom:0;
+
+		a{
+			padding: 0 @msgGap;
+			background: @bgWhite;
+
+			&.navigate-key{
+				min-height: 30px;
+				line-height: 30px;
+				background: @bgGray;
+				padding: 0 10px;
+				color: @fontBlack;
+			}
+		}
+	}
+
+	.patient-qna-list{
+		position: fixed;
+		top: 52px;
+		left:0;
+		right:0;
+		bottom:5px;
+		overflow-y: scroll;
+		-webkit-overflow-scrolling: touch;
+	}
+
+	.patient-abc-list{
+		position: fixed;
+		top: 115px;
+		left:0;
+		right:0;
+		bottom:5px;
+		overflow-y: scroll;
+		-webkit-overflow-scrolling: touch;
+	}
+
+	.no-data-tip{
+		top: 50px;
+	}
+
+	.no-data-latest-msg{
+		&:after{
+			content:"无最新咨询信息";
+		}
+	}
+
+	.no-data-patient{
+		&:after{
+			content:"您还没有发展任何患者";
+		}
+	}
+
+	.abc-side-bar-outer{
+		top: 144px;
+
+		.abc-side-bar-list{
+			li{
+				font-size: @font12;
+				margin: 0 auto;
+
+				a{
+					padding: 0;
+					min-height: 100%;
+				}
+			}
+		}
+	}
+}

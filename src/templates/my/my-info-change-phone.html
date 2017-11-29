@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<title>更换手机号码</title>
+	<link href="../../styles/base.css" rel="stylesheet" media="all">
+	<link href="../../styles/page-my.css" rel="stylesheet" media="all">
+</head>
+<body>
+	<div class="author-register form-input">
+		<div class="form-input-row">
+			<input type="tel" id="phone" size="11" maxlength="11" placeholder="请输入新手机号码" />
+		</div>
+		<span class="validatePanel">
+			<div class="form-input-row">
+				<input id="verifyCode" type="tel" size="4" maxlength="4" placeholder="请输入4位数字的验证码" />
+			</div>
+			<a id="getVerifyCode">获取验证码</a>
+		</span>
+
+		<footer class="no-need-fixed">
+			<a class="save" id="save">确 认</a>
+		</footer>
+	</div>
+
+
+	<script src="../../js/config.js"></script>
+	<script src="../../js/dist/components.min.js"></script>
+	<script src="../../js/dist/my-info-change-phone.min.js"></script>
+</body>
+</html>

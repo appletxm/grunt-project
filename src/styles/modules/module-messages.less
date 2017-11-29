@@ -1,0 +1,159 @@
+.tip-show-msg{
+	padding: @msgGap;
+	color: @fontLightGray;
+	font-size: @font14;
+	line-height:20px;
+
+	b{
+		display: inline;
+		color: @fontBlueHigh;
+	}
+}
+
+.tip-msg-fixed{
+	padding: 10px 15px 0 15px;
+	margin-top: 10px;
+
+	&:before{
+		.icon();
+		color: @fontOrange;
+		content: @fa-var-exclamation-circle;
+		font-size: @font20;
+		margin-right: 5px;
+		background: @bgWhite;
+		-webkit-border-radius: 10px;
+	}
+}
+
+.tipMsg{
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	display: none;
+
+	.mask {
+		position: fixed;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		display: none;
+	}
+
+	.msg-body {
+		position: fixed;
+		font-size: @font14;
+		color: @fontWhite;
+		background: @bgBlack;
+		.radius;
+		//.shadow;
+
+		&:before{
+			.icon();
+			margin-right: 5px;
+			color: @fontWhite;
+			font-size: @font12;
+		}
+
+		&.error {
+			left: @msgGap;
+			right: @msgGap;
+			bottom: -100px;
+			padding: @msgGap;
+
+			&:before {
+				color: @fontWhite;
+				content: @fa-var-exclamation-circle;
+			}
+		}
+
+		&.alert {
+			left: @msgGap;
+			right: @msgGap;
+			bottom: -100px;
+			padding: @msgGap;
+
+			&:before {
+				color: @fontWhite;
+				content: @fa-var-exclamation-circle;
+			}
+		}
+
+		&.loading {
+			width: 80px;
+			height: 80px;
+			bottom: -100px;
+			left: 50%;
+			right: auto;
+			margin: -40px;
+			text-align: center;
+			padding: 0;
+			opacity: 0;
+			overflow: hidden;
+
+			&:before{
+				content: "";
+				background: @bgBlack;
+				opacity: 0;
+				width: 100%;
+				height: 100%;
+				display: block;
+				position: absolute;
+				top: 0;
+				left: 0;
+
+				.radius();
+			}
+
+			span{
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height:100%;
+				font-size: @font30;
+				line-height: 80px;
+			}
+		}
+
+		&.msg-body-actived {
+			bottom: @msgGap + 10px;
+		}
+
+		&.loading-actived {
+			opacity: 0.6;
+			bottom: 50%;
+		}
+
+		-webkit-transition: all 0.3s ease;
+	}
+
+	&.tipMsgActived{
+		z-index: 11;
+		display: block;
+
+		.msg-body{
+			-webkit-transform: translate3d(0, 0, 0);
+			-webkit-backface-visibility: hidden;
+			-webkit-perspective: 1000;
+		}
+
+		.mask {
+			display: block;
+		}
+	}
+}
+
+.footer-tip-msg{
+	position: fixed;
+	bottom:0;
+	left: 0;
+	height: @footerTipHeight;
+	line-height: @footerTipHeight;
+	text-align: center;
+	width: 100%;
+}

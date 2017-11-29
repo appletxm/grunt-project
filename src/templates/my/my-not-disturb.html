@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>勿扰模式</title>
+    <link href="../../styles/base.css" rel="stylesheet" media="all">
+    <link href="../../styles/page-my.css" rel="stylesheet" media="all">
+</head>
+<body>
+    <section id="myTimepanel" class="basic-info my-time not-disturb-box">
+        <dl class="top-tar">
+            <dt>勿扰模式</dt>
+            <dd>
+                <span id="timeSwitch" class="animate-check close">
+                    <b></b>
+                    <input type="checkbox" value="1" />
+                </span>
+            </dd>
+        </dl>
+
+        <div id="timeChoose" class="mask-outer" style="display:none;">
+            <dl>
+                <dt>勿扰开始时间</dt>
+                <dd>
+                    <input type="time" id="startTime">
+                </dd>
+            </dl>
+            <dl>
+                <dt>勿扰结束时间</dt>
+                <dd>
+                    <input type="time" id="endTime">
+                </dd>
+            </dl>
+        </div>
+
+     <!-- <p id="point-text" style="display:none;">设置完成，记得点击一下空白区域，才能保存。</p> -->
+
+    </section>
+
+    <footer>
+        <a id="save" href="javascript:void(0);">保存</a>
+    </footer>
+
+    <script src="../../js/config.js"></script>
+    <script src="../../js/dist/components.min.js"></script>
+    <script src="../../js/dist/my-not-disturb.min.js"></script>
+
+</body>
+</html>
